@@ -1,7 +1,19 @@
 import {Component} from 'angular2/core';
+import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router'
+
+import {IdListComponent} from './id/id-list.component'
+import {IdDetailComponent} from './id/id-detail.component'
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    templateUrl: 'app/app.component.html',
+    providers: [ROUTER_PROVIDERS]
 })
+
+
+@RouteConfig([
+    { path: '/list', name: 'IdList', component: IdListComponent, useAsDefault: true },
+    { path: '/detail', name: 'IdDetail', component: IdDetailComponent }
+])
+
 export class AppComponent { }

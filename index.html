@@ -1,27 +1,40 @@
 ﻿<!DOCTYPE html>
 <html>
 
-<head>
-    <title>Acme Product Management</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="app/app.component.css" rel="stylesheet" />
+<head lange='en'>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
 
-    <!-- 1. Load libraries -->
-    <!-- IE required polyfills, in this exact order -->
-    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
-    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+  <title>Litmus</title>
 
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+  <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 
-    <!-- 2. Configure SystemJS -->
-    <script>
-        System.config({
+  <!-- 1. Load libraries -->
+  <!-- IE required polyfills, in this exact order -->
+  <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+  <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+  <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+
+  <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <script src="node_modules/rxjs/bundles/Rx.js"></script>
+  <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+  <!-- Required for http -->
+  <script src="node_modules/angular2/bundles/http.dev.js"></script>
+
+  <!-- Required for routing -->
+  <script src="node_modules/angular2/bundles/router.dev.js"></script>
+
+  <!-- 2. Configure SystemJS -->
+  <script>
+    System.config({
         packages: {        
           app: {
             format: 'register',
@@ -31,11 +44,14 @@
       });
       System.import('app/main')
             .then(null, console.error.bind(console));
-    </script>
+  </script>
 </head>
 
 <body>
-    <my-app>Loading...</my-app>
+
+
+  <my-app>Loading...</my-app>
+
 </body>
 
 </html>
