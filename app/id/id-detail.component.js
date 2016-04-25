@@ -24,7 +24,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 }
                 IdDetailComponent = __decorate([
                     core_1.Component({
-                        templateUrl: 'app/id/id-detail.component.ts',
+                        templateUrl: 'app/id/id-detail.component.html',
                     }), 
                     __metadata('design:paramtypes', [])
                 ], IdDetailComponent);

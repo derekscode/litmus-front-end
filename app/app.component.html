@@ -8,13 +8,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-            <a class="navbar-brand" href="#">Bootstrap theme</a>
+            <a class="navbar-brand" href="#">Litmus</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">Test</a></li>
-                <li><a href="#contact">Test</a></li>
+                <!--<li class="active"><a href="#">Home</a></li>-->
+                <li><a [routerLink]="['IdList']">Id List</a></li>
+                <li><a [routerLink]="['IdDetail']">Id Detail</a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->
@@ -22,12 +22,8 @@
 </nav>
 
 <div class="container">
+    <div class="row"><br><br></div>
 
-    <div class="row">
-        <br>
-        <br>
-    </div>
-
-    <id></id>
+    <router-outlet></router-outlet>
 
 </div>

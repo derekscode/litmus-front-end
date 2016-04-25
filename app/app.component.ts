@@ -7,6 +7,7 @@ import {IdDetailComponent} from './id/id-detail.component'
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
+    directives: [ROUTER_DIRECTIVES],
     providers: [ROUTER_PROVIDERS]
 })
 
@@ -16,4 +17,6 @@ import {IdDetailComponent} from './id/id-detail.component'
     { path: '/detail', name: 'IdDetail', component: IdDetailComponent }
 ])
 
-export class AppComponent { }
+export class AppComponent { 
+    pageTitle: string = 'My App';
+}

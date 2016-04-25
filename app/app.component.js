@@ -29,11 +29,13 @@ System.register(['angular2/core', 'angular2/router', './id/id-list.component', '
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.pageTitle = 'My App';
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: 'app/app.component.html',
+                        directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [router_1.ROUTER_PROVIDERS]
                     }),
                     router_1.RouteConfig([

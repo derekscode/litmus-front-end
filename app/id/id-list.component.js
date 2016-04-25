@@ -23,7 +23,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
         execute: function() {
             IdListComponent = (function () {
                 function IdListComponent() {
-                    this.pageTitle = 'id List';
+                    this.pageTitle = 'Id List';
                 }
                 IdListComponent = __decorate([
                     core_1.Component({
