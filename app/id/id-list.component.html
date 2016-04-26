@@ -26,7 +26,11 @@
             <tbody>
                 <tr *ngFor="#id of ids">
                     
-                    <td>{{ id.idNumber }}</td>
+                    <td>
+                        <a [routerLink]="['IdDetail', {id: id.idNumber}]">
+                            {{ id.idNumber }}  
+                        </a>                        
+                    </td>
                     <td>{{ id.state }}</td>
                     <td>{{ id.version }}</td>
                     <td>{{ id.orientation }}</td>

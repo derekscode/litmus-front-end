@@ -17,8 +17,8 @@ import {IdDetailComponent} from './id/id-detail.component'
 
 
 @RouteConfig([
-    { path: '/list', name: 'IdList', component: IdListComponent, useAsDefault: true }
-    // { path: '/detail/:id', name: 'IdDetail', component: IdDetailComponent }
+    { path: '/list', name: 'IdList', component: IdListComponent, useAsDefault: true },
+    { path: '/detail/:id', name: 'IdDetail', component: IdDetailComponent }
 ])
 
 export class AppComponent { 

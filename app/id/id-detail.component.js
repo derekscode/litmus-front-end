@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './id.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,23 +10,32 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, router_1, id_service_1;
     var IdDetailComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
+            },
+            function (id_service_1_1) {
+                id_service_1 = id_service_1_1;
             }],
         execute: function() {
             IdDetailComponent = (function () {
-                function IdDetailComponent() {
+                function IdDetailComponent(_idService, _router, _routeParams) {
+                    this._idService = _idService;
+                    this._router = _router;
+                    this._routeParams = _routeParams;
                     this.pageTitle = 'Id Detail';
                 }
                 IdDetailComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/id/id-detail.component.html',
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [id_service_1.IdService, router_1.Router, router_1.RouteParams])
                 ], IdDetailComponent);
                 return IdDetailComponent;
             }());
