@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './card.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './card.service', './card-filter.pipe'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './card.service'], function
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, card_service_1;
+    var core_1, router_1, card_service_1, card_filter_pipe_1;
     var CardListComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['angular2/core', 'angular2/router', './card.service'], function
             },
             function (card_service_1_1) {
                 card_service_1 = card_service_1_1;
+            },
+            function (card_filter_pipe_1_1) {
+                card_filter_pipe_1 = card_filter_pipe_1_1;
             }],
         execute: function() {
             CardListComponent = (function () {
@@ -37,7 +40,8 @@ System.register(['angular2/core', 'angular2/router', './card.service'], function
                 CardListComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/card/card-list.component.html',
-                        directives: [router_1.ROUTER_DIRECTIVES]
+                        directives: [router_1.ROUTER_DIRECTIVES],
+                        pipes: [card_filter_pipe_1.CardFilterPipe]
                     }), 
                     __metadata('design:paramtypes', [card_service_1.CardService])
                 ], CardListComponent);
