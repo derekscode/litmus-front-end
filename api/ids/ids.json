@@ -5,7 +5,7 @@
         "version": "2015R1",
         "orientation": "L",
         "expiration": "2/12/2017",
-        "birthYear": 1994,
+        "birthYear": 1974,
         "notes": "Dirty back",
         "isDamaged": true,
         "isPaper": true,
@@ -17,15 +17,15 @@
         "idNumber": 2,
         "state": "KS",
         "version": "2015R1",
-        "orientation": "L",
-        "expiration": "2/12/2017",
-        "birthYear": 1994,
-        "notes": "Dirty back",
-        "isDamaged": true,
+        "orientation": "P",
+        "expiration": "1/2/2020",
+        "birthYear": 1984,
+        "notes": "Under age.",
+        "isDamaged": false,
         "isPaper": true,
-        "hasMagstripe": false,
+        "hasMagstripe": true,
         "hasBarcode": false,
-        "location": "IDV"
+        "location": "SD"
     },
     {
         "idNumber": 3,
@@ -33,12 +33,12 @@
         "version": "2015R1",
         "orientation": "L",
         "expiration": "2/12/2017",
-        "birthYear": 1994,
-        "notes": "Dirty back",
+        "birthYear": 1990,
+        "notes": "Customer contacted",
         "isDamaged": true,
-        "isPaper": true,
+        "isPaper": false,
         "hasMagstripe": false,
-        "hasBarcode": false,
-        "location": "IDV"
+        "hasBarcode": true,
+        "location": "MR"
     }
 ]

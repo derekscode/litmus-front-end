@@ -1,4 +1,4 @@
-export interface interfaceIId {
+export interface IId {
     idNumber: number;
     state: string;
     version: string;

@@ -1,14 +1,8 @@
 <div class="row">
     <div class="page-header">
-        <h1>
-            <!--{{pageTitle}}-->
-             title goes here
-             </h1>
+        <h1>{{pageTitle}}</h1>
     </div>
 </div>
-
-
-
 
 <div class="row">
     <div class="col-md-10">
@@ -19,7 +13,6 @@
                     <th>State</th>
                     <th>Version</th>
                     <th>Orientation</th>
-
                     <th>Expiration</th>
                     <th>Birth Year</th>
                     <th>Notes</th>
@@ -32,15 +25,20 @@
             </thead>
             <tbody>
                 <tr *ngFor="#id of ids">
+                    
                     <td>{{ id.idNumber }}</td>
                     <td>{{ id.state }}</td>
-                </tr>
-
-                <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>{{ id.version }}</td>
+                    <td>{{ id.orientation }}</td>
+                    <td>{{ id.expiration }}</td>
+                    <td>{{ id.birthYear }}</td>
+                    <td>{{ id.notes }}</td>
+                    <td>{{ id.isDamaged }}</td>
+                    <td>{{ id.isPaper }}</td>
+                    <td>{{ id.hasMagstripe }}</td>
+                    <td>{{ id.hasBarcode }}</td>
+                    <td>{{ id.location }}</td>
+                    
                 </tr>
 
             </tbody>
