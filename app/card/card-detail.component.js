@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './id.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './card.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,8 +10,8 @@ System.register(['angular2/core', 'angular2/router', './id.service'], function(e
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, id_service_1;
-    var IdDetailComponent;
+    var core_1, router_1, card_service_1;
+    var CardDetailComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -20,27 +20,27 @@ System.register(['angular2/core', 'angular2/router', './id.service'], function(e
             function (router_1_1) {
                 router_1 = router_1_1;
             },
-            function (id_service_1_1) {
-                id_service_1 = id_service_1_1;
+            function (card_service_1_1) {
+                card_service_1 = card_service_1_1;
             }],
         execute: function() {
-            IdDetailComponent = (function () {
-                function IdDetailComponent(_idService, _router, _routeParams) {
-                    this._idService = _idService;
+            CardDetailComponent = (function () {
+                function CardDetailComponent(_cardService, _router, _routeParams) {
+                    this._cardService = _cardService;
                     this._router = _router;
                     this._routeParams = _routeParams;
-                    this.pageTitle = 'Id Detail';
+                    this.pageTitle = 'Card Detail';
                 }
-                IdDetailComponent = __decorate([
+                CardDetailComponent = __decorate([
                     core_1.Component({
-                        templateUrl: 'app/id/id-detail.component.html',
+                        templateUrl: 'app/card/card-detail.component.html',
                     }), 
-                    __metadata('design:paramtypes', [id_service_1.IdService, router_1.Router, router_1.RouteParams])
-                ], IdDetailComponent);
-                return IdDetailComponent;
+                    __metadata('design:paramtypes', [card_service_1.CardService, router_1.Router, router_1.RouteParams])
+                ], CardDetailComponent);
+                return CardDetailComponent;
             }());
-            exports_1("IdDetailComponent", IdDetailComponent);
+            exports_1("CardDetailComponent", CardDetailComponent);
         }
     }
 });
-//# sourceMappingURL=id-detail.component.js.map
+//# sourceMappingURL=card-detail.component.js.map

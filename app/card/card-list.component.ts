@@ -1,27 +1,27 @@
 import { Component, OnInit } from 'angular2/core'
 import { ROUTER_DIRECTIVES } from 'angular2/router'
 
-import { IId } from './id'
-import { IdService } from './id.service'
+import { ICard } from './card'
+import { CardService } from './card.service'
 
 @Component({
-    templateUrl: 'app/id/id-list.component.html',
+    templateUrl: 'app/card/card-list.component.html',
     directives: [ROUTER_DIRECTIVES]
 })
 
-export class IdListComponent implements OnInit {
+export class CardListComponent implements OnInit {
     pageTitle: string = 'List';
-    ids: IId[];
+    cards: ICard[];
     errorMessage: string;
     
     
-    constructor(private _idService: IdService) {
+    constructor(private _cardService: CardService) {
     }
 
     ngOnInit(): void {
-        this._idService.getIds()
+        this._cardService.getCards()
             .subscribe(
-                products => this.ids = products,
+                card => this.cards = card,
                 error => this.errorMessage = <any>error);
     }
 

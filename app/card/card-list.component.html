@@ -24,25 +24,25 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="#id of ids">
-                    
+                <tr *ngFor="#card of cards">
+
                     <td>
-                        <a [routerLink]="['IdDetail', {id: id.idNumber}]">
-                            {{ id.idNumber }}  
-                        </a>                        
+                        <a [routerLink]="['CardDetail', {id: card.idNumber}]">
+                            {{ card.idNumber }}  
+                        </a>
                     </td>
-                    <td>{{ id.state }}</td>
-                    <td>{{ id.version }}</td>
-                    <td>{{ id.orientation }}</td>
-                    <td>{{ id.expiration }}</td>
-                    <td>{{ id.birthYear }}</td>
-                    <td>{{ id.notes }}</td>
-                    <td>{{ id.isDamaged }}</td>
-                    <td>{{ id.isPaper }}</td>
-                    <td>{{ id.hasMagstripe }}</td>
-                    <td>{{ id.hasBarcode }}</td>
-                    <td>{{ id.location }}</td>
-                    
+                    <td>{{ card.state }}</td>
+                    <td>{{ card.version }}</td>
+                    <td>{{ card.orientation }}</td>
+                    <td>{{ card.expiration }}</td>
+                    <td>{{ card.birthYear }}</td>
+                    <td>{{ card.notes }}</td>
+                    <td>{{ card.isDamaged }}</td>
+                    <td>{{ card.isPaper }}</td>
+                    <td>{{ card.hasMagstripe }}</td>
+                    <td>{{ card.hasBarcode }}</td>
+                    <td>{{ card.location }}</td>
+
                 </tr>
 
             </tbody>

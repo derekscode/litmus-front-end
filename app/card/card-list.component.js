@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './id.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './card.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,8 +10,8 @@ System.register(['angular2/core', 'angular2/router', './id.service'], function(e
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, id_service_1;
-    var IdListComponent;
+    var core_1, router_1, card_service_1;
+    var CardListComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -20,31 +20,31 @@ System.register(['angular2/core', 'angular2/router', './id.service'], function(e
             function (router_1_1) {
                 router_1 = router_1_1;
             },
-            function (id_service_1_1) {
-                id_service_1 = id_service_1_1;
+            function (card_service_1_1) {
+                card_service_1 = card_service_1_1;
             }],
         execute: function() {
-            IdListComponent = (function () {
-                function IdListComponent(_idService) {
-                    this._idService = _idService;
+            CardListComponent = (function () {
+                function CardListComponent(_cardService) {
+                    this._cardService = _cardService;
                     this.pageTitle = 'List';
                 }
-                IdListComponent.prototype.ngOnInit = function () {
+                CardListComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this._idService.getIds()
-                        .subscribe(function (products) { return _this.ids = products; }, function (error) { return _this.errorMessage = error; });
+                    this._cardService.getCards()
+                        .subscribe(function (card) { return _this.cards = card; }, function (error) { return _this.errorMessage = error; });
                 };
-                IdListComponent = __decorate([
+                CardListComponent = __decorate([
                     core_1.Component({
-                        templateUrl: 'app/id/id-list.component.html',
+                        templateUrl: 'app/card/card-list.component.html',
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
-                    __metadata('design:paramtypes', [id_service_1.IdService])
-                ], IdListComponent);
-                return IdListComponent;
+                    __metadata('design:paramtypes', [card_service_1.CardService])
+                ], CardListComponent);
+                return CardListComponent;
             }());
-            exports_1("IdListComponent", IdListComponent);
+            exports_1("CardListComponent", CardListComponent);
         }
     }
 });
-//# sourceMappingURL=id-list.component.js.map
+//# sourceMappingURL=card-list.component.js.map

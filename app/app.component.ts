@@ -3,22 +3,22 @@ import { HTTP_PROVIDERS } from 'angular2/http'
 import 'rxjs/Rx';   // Load all features
 import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router'
 
-import {IdService} from './id/id.service'
+import {CardService} from './card/card.service'
 
-import {IdListComponent} from './id/id-list.component'
-import {IdDetailComponent} from './id/id-detail.component'
+import {CardListComponent} from './card/card-list.component'
+import {CardDetailComponent} from './card/card-detail.component'
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
     directives: [ROUTER_DIRECTIVES],
-    providers: [IdService, HTTP_PROVIDERS, ROUTER_PROVIDERS]
+    providers: [CardService, HTTP_PROVIDERS, ROUTER_PROVIDERS]
 })
 
 
 @RouteConfig([
-    { path: '/list', name: 'IdList', component: IdListComponent, useAsDefault: true },
-    { path: '/detail/:id', name: 'IdDetail', component: IdDetailComponent }
+    { path: '/list', name: 'CardList', component: CardListComponent, useAsDefault: true },
+    { path: '/detail/:id', name: 'CardDetail', component: CardDetailComponent }
 ])
 
 export class AppComponent { 

@@ -11,7 +11,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, http_1, Observable_1;
-    var IdService;
+    var CardService;
     return {
         setters:[
             function (core_1_1) {
@@ -24,29 +24,29 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                 Observable_1 = Observable_1_1;
             }],
         execute: function() {
-            IdService = (function () {
-                function IdService(_http) {
+            CardService = (function () {
+                function CardService(_http) {
                     this._http = _http;
-                    this._idUrl = 'api/ids/ids.json';
+                    this._idUrl = 'api/cards/cards.json';
                 }
-                IdService.prototype.getIds = function () {
+                CardService.prototype.getCards = function () {
                     return this._http.get(this._idUrl)
                         .map(function (response) { return response.json(); })
                         .do(function (data) { return console.log("All: " + JSON.stringify(data)); })
                         .catch(this.handleError);
                 };
-                IdService.prototype.handleError = function (error) {
+                CardService.prototype.handleError = function (error) {
                     console.error(error);
                     return Observable_1.Observable.throw(error.json().error || 'Server error');
                 };
-                IdService = __decorate([
+                CardService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [http_1.Http])
-                ], IdService);
-                return IdService;
+                ], CardService);
+                return CardService;
             }());
-            exports_1("IdService", IdService);
+            exports_1("CardService", CardService);
         }
     }
 });
-//# sourceMappingURL=id.service.js.map
+//# sourceMappingURL=card.service.js.map

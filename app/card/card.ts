@@ -1,4 +1,4 @@
-export interface IId {
+export interface ICard {
     idNumber: number;
     state: string;
     version: string;
