@@ -27,12 +27,18 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
             CardService = (function () {
                 function CardService(_http) {
                     this._http = _http;
-                    this._idUrl = 'api/cards/cards.json';
+                    this._cardUrl = 'api/cards/cards.json';
                 }
                 CardService.prototype.getCards = function () {
-                    return this._http.get(this._idUrl)
+                    return this._http.get(this._cardUrl)
                         .map(function (response) { return response.json(); })
-                        .do(function (data) { return console.log("All: " + JSON.stringify(data)); })
+                        .do(function (data) { return console.log("getCards: " + JSON.stringify(data)); })
+                        .catch(this.handleError);
+                };
+                CardService.prototype.getCard = function (id) {
+                    return this.getCards()
+                        .map(function (cards) { return cards.find(function (p) { return p.idNumber === id; }); })
+                        .do(function (data) { return console.log("getCard: " + JSON.stringify(data)); })
                         .catch(this.handleError);
                 };
                 CardService.prototype.handleError = function (error) {

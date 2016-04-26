@@ -6,17 +6,25 @@ import { ICard } from './card';
 
 @Injectable()
 export class CardService {
-    private _idUrl = 'api/cards/cards.json';
-    
+    private _cardUrl = 'api/cards/cards.json';
+
     constructor(private _http: Http) { }
-    
+
     getCards(): Observable<ICard[]> {
-        return this._http.get(this._idUrl)
-            .map((response: Response) => <ICard[]> response.json())
-            .do(data => console.log("All: " + JSON.stringify(data)))
+        return this._http.get(this._cardUrl)
+            .map((response: Response) => <ICard[]>response.json())
+            .do(data => console.log("getCards: " + JSON.stringify(data)))
             .catch(this.handleError);
     }
-    
+
+    getCard(id: number): Observable<ICard> {
+        return this.getCards()
+            .map((cards: ICard[]) => cards.find(p => p.idNumber === id))
+            .do(data => console.log("getCard: " + JSON.stringify(data)))
+            .catch(this.handleError);
+
+    }
+
     private handleError(error: Response) {
         console.error(error);
         return Observable.throw(error.json().error || 'Server error')

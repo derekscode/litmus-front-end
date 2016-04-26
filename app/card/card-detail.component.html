@@ -1,5 +1,39 @@
-<div class="page-header">
-    <h1>{{pageTitle}}</h1>
-</div>
+<div *ngIf='card'>
 
-<p>Card Detail page</p>
+    <div class="page-header">
+        <h1>{{pageTitle}}: {{card.idNumber}}</h1>
+    </div>
+
+    <div class='row'>
+        <div class='col-md-12'>
+            <div class='row'>
+                <div class='col-md-3'>Id Number:</div>
+                <div class='col-md-6'>{{card.idNumber}}</div>
+            </div>
+            <div class='row'>
+                <div class='col-md-3'>State:</div>
+                <div class='col-md-6'>{{card.state}}</div>
+            </div>
+            <div class='row'>
+                <div class='col-md-3'>Version:</div>
+                <div class='col-md-6'>{{card.version}}</div>
+            </div>
+            <div class='row'>
+                <div class='col-md-3'>Orientation:</div>
+                <div class='col-md-6'>{{card.orientation}}</div>
+            </div>
+            <div class='row'>
+                <div class='col-md-3'>Expiration:</div>
+                <div class='col-md-6'>{{card.expiration}}</div>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-12'>
+                <br/>
+                
+                <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+                    <i class='glyphicon glyphicon-chevron-left'></i> Back
+                </a>
+            </div>
+        </div>
+    </div>

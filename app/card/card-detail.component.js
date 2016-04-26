@@ -31,9 +31,24 @@ System.register(['angular2/core', 'angular2/router', './card.service'], function
                     this._routeParams = _routeParams;
                     this.pageTitle = 'Card Detail';
                 }
+                CardDetailComponent.prototype.ngOnInit = function () {
+                    if (!this.card) {
+                        var id = +this._routeParams.get('id');
+                        // this.pageTitle += `: ${id}`;
+                        this.getCard(id);
+                    }
+                };
+                CardDetailComponent.prototype.getCard = function (id) {
+                    var _this = this;
+                    this._cardService.getCard(id)
+                        .subscribe(function (card) { return _this.card = card; }, function (error) { return _this.errorMessage = error; });
+                };
+                CardDetailComponent.prototype.onBack = function () {
+                    this._router.navigate(['CardList']);
+                };
                 CardDetailComponent = __decorate([
                     core_1.Component({
-                        templateUrl: 'app/card/card-detail.component.html',
+                        templateUrl: 'app/card/card-detail.component.html'
                     }), 
                     __metadata('design:paramtypes', [card_service_1.CardService, router_1.Router, router_1.RouteParams])
                 ], CardDetailComponent);
