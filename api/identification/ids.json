@@ -1,0 +1,44 @@
+[
+    {
+        "idNumber": 1,
+        "state": "CA",
+        "version": "2015R1",
+        "orientation": "L",
+        "expiration": "2/12/2017",
+        "birthYear": 1994,
+        "notes": "Dirty back",
+        "isDamaged": true,
+        "isPaper": true,
+        "hasMagstripe": false,
+        "hasBarcode": false,
+        "location": "IDV"
+    },
+    {
+        "idNumber": 2,
+        "state": "KS",
+        "version": "2015R1",
+        "orientation": "L",
+        "expiration": "2/12/2017",
+        "birthYear": 1994,
+        "notes": "Dirty back",
+        "isDamaged": true,
+        "isPaper": true,
+        "hasMagstripe": false,
+        "hasBarcode": false,
+        "location": "IDV"
+    },
+    {
+        "idNumber": 3,
+        "state": "IL",
+        "version": "2015R1",
+        "orientation": "L",
+        "expiration": "2/12/2017",
+        "birthYear": 1994,
+        "notes": "Dirty back",
+        "isDamaged": true,
+        "isPaper": true,
+        "hasMagstripe": false,
+        "hasBarcode": false,
+        "location": "IDV"
+    }
+]

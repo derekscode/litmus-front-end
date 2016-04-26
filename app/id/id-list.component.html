@@ -1,6 +1,14 @@
-<div class="page-header">
-    <h1>{{pageTitle}}</h1>
+<div class="row">
+    <div class="page-header">
+        <h1>
+            <!--{{pageTitle}}-->
+             title goes here
+             </h1>
+    </div>
 </div>
+
+
+
 
 <div class="row">
     <div class="col-md-10">
@@ -23,24 +31,18 @@
                 </tr>
             </thead>
             <tbody>
+                <tr *ngFor="#id of ids">
+                    <td>{{ id.idNumber }}</td>
+                    <td>{{ id.state }}</td>
+                </tr>
+
                 <tr>
                     <td>1</td>
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+
             </tbody>
         </table>
     </div>
