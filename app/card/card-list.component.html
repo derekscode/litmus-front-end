@@ -5,17 +5,15 @@
 </div>
 
 <div class="row">
-    <b>listFilter:</b> <input [(ngModel)]='listFilter' type="text" />
-    (filters by state)
+    <b>listFilter:</b> <input [(ngModel)]='listFilter' type="text" /> (filters by state)
 </div>
-
 
 <div class="row">
     <div class="col-md-10">
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID Number</th>
+                    <th>Card Id</th>
                     <th>State</th>
                     <th>Version</th>
                     <th>Orientation</th>
@@ -32,8 +30,8 @@
             <tbody>
                 <tr *ngFor="#card of cards | cardFilter: listFilter">
                     <td>
-                        <a [routerLink]="['CardDetail', {id: card.idNumber}]">
-                            {{ card.idNumber }}  
+                        <a [routerLink]="['CardDetail', {id: card.cardId}]">
+                            {{ card.cardId }}  
                         </a>
                     </td>
                     <td>{{ card.state }}</td>

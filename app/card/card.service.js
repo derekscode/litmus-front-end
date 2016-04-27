@@ -37,7 +37,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                 };
                 CardService.prototype.getCard = function (id) {
                     return this.getCards()
-                        .map(function (cards) { return cards.find(function (p) { return p.idNumber === id; }); })
+                        .map(function (cards) { return cards.find(function (p) { return p.cardId === id; }); })
                         .do(function (data) { return console.log("getCard: " + JSON.stringify(data)); })
                         .catch(this.handleError);
                 };

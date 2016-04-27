@@ -19,7 +19,7 @@ export class CardService {
 
     getCard(id: number): Observable<ICard> {
         return this.getCards()
-            .map((cards: ICard[]) => cards.find(p => p.idNumber === id))
+            .map((cards: ICard[]) => cards.find(p => p.cardId === id))
             .do(data => console.log("getCard: " + JSON.stringify(data)))
             .catch(this.handleError);
 
