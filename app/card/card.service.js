@@ -27,7 +27,8 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
             CardService = (function () {
                 function CardService(_http) {
                     this._http = _http;
-                    this._cardUrl = 'api/cards/cards.json';
+                    // private _cardUrl = 'api/cards/cards.json';
+                    this._cardUrl = 'http://localhost:8462/api/card';
                 }
                 CardService.prototype.getCards = function () {
                     return this._http.get(this._cardUrl)

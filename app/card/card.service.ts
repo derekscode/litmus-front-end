@@ -6,7 +6,10 @@ import { ICard } from './card';
 
 @Injectable()
 export class CardService {
-    private _cardUrl = 'api/cards/cards.json';
+    // private _cardUrl = 'api/cards/cards.json';
+    private _cardUrl = 'http://localhost:8462/api/card';
+
+
 
     constructor(private _http: Http) { }
 

@@ -2,7 +2,7 @@
     {
         "cardId": 1111111,
         "state": "CA",
-        "version": "2015R1",
+        "version": "api/cards/cards.json",
         "orientation": "L",
         "expiration": "2/12/2017",
         "birthYear": 1974,
