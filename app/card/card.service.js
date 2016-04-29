@@ -28,6 +28,11 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                 function CardService(_http) {
                     this._http = _http;
                     // private _cardUrl = 'api/cards/cards.json';
+                    // LitmusWithoutAuthentication - works
+                    // private _cardUrl = 'http://localhost:25137/api/card';
+                    // LitmusWithAuthentication - breaks
+                    // private _cardUrl = 'http://localhost:25466/api/card';
+                    // Litmus
                     this._cardUrl = 'http://localhost:8462/api/card';
                 }
                 CardService.prototype.getCards = function () {
