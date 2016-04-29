@@ -13,6 +13,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Card Id</th>
                     <th>State</th>
                     <th>Version</th>
@@ -30,10 +31,11 @@
             <tbody>
                 <tr *ngFor="#card of cards | cardFilter: listFilter">
                     <td>
-                        <a [routerLink]="['CardDetail', {id: card.cardId}]">
-                            {{ card.cardId }}  
+                        <a [routerLink]="['CardDetail', {id: card.id}]">
+                            {{ card.id }}  
                         </a>
                     </td>
+                    <td>{{ card.cardId }}</td>
                     <td>{{ card.state }}</td>
                     <td>{{ card.version }}</td>
                     <td>{{ card.orientation }}</td>

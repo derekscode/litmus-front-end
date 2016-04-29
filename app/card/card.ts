@@ -1,4 +1,5 @@
 export interface ICard {
+    id: number;
     cardId: number;
     state: string;
     version: string;
