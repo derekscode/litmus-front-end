@@ -6,7 +6,8 @@ import { ICard } from './card';
 
 @Injectable()
 export class CardService {
-    // private _cardUrl = 'api/cards/cards.json';
+    // cards.json
+    private _cardUrl = 'api/cards/cards.json';
 
     // LitmusWithoutAuthentication - works
     // private _cardUrl = 'http://localhost:25137/api/card';
@@ -15,7 +16,7 @@ export class CardService {
     // private _cardUrl = 'http://localhost:25466/api/card';
 
     // Litmus
-    private _cardUrl = 'http://localhost:8462/api/card';
+    // private _cardUrl = 'http://localhost:8462/api/card';
 
 
     constructor(private _http: Http) { }

@@ -35,7 +35,11 @@
                             {{ card.id }}  
                         </a>
                     </td>
-                    <td>{{ card.cardId }}</td>
+                    <td>
+                        <a [routerLink]="['CardDetail', {id: card.id}]">
+                            {{ card.cardId }}  
+                        </a>
+                    </td>
                     <td>{{ card.state }}</td>
                     <td>{{ card.version }}</td>
                     <td>{{ card.orientation }}</td>

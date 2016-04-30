@@ -13,4 +13,3 @@ export interface ICard {
     hasBarcode: boolean;
     location: string;
 }
-
