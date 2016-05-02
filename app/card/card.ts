@@ -1,6 +1,6 @@
 export interface ICard {
     id: number;
-    cardId: number;
+    cardId: string;
     state: string;
     version: string;
     orientation: string;

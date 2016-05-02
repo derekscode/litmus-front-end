@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "cardId": 1111111,
+        "cardId": "F11111111",
         "state": "CA",
         "version": "api/cards/cards.json",
         "orientation": "L",
@@ -16,7 +16,7 @@
     },
     {
         "id": 2,
-        "cardId": 2222222,
+        "cardId": "F2222222",
         "state": "KS",
         "version": "2015R1",
         "orientation": "P",
@@ -30,8 +30,8 @@
         "location": "SD"
     },
     {
-        "id":3,
-        "cardId": 3333333,
+        "id": 3,
+        "cardId": "F3333333",
         "state": "IL",
         "version": "2015R1",
         "orientation": "L",
