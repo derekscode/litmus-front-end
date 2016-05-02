@@ -13,3 +13,10 @@ export interface ICard {
     hasBarcode: boolean;
     location: string;
 }
+
+export class Card {
+    constructor(
+        public cardId: string,
+        public state: string
+    ) { }
+}
