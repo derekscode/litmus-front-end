@@ -12,6 +12,7 @@ export class CardEditComponent {
     pageTitle: string = 'Edit Card';
     card: Card;
     errorMessage: string;
+    response: string[];
 
     constructor(
         private _cardService: CardService,
@@ -41,6 +42,13 @@ export class CardEditComponent {
         this._cardService.updateCard(updatedCard)
             .subscribe(
             data => this.card.push(data),
+            error => this.errorMessage = <any>error);
+    }
+    
+    deleteCard(id:number){
+        this._cardService.deleteCard(id)
+             .subscribe(
+            data => this.response.push(data),
             error => this.errorMessage = <any>error);
     }
 

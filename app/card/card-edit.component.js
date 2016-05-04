@@ -50,6 +50,11 @@ System.register(['angular2/core', 'angular2/router', './card.service'], function
                     this._cardService.updateCard(updatedCard)
                         .subscribe(function (data) { return _this.card.push(data); }, function (error) { return _this.errorMessage = error; });
                 };
+                CardEditComponent.prototype.deleteCard = function (id) {
+                    var _this = this;
+                    this._cardService.deleteCard(id)
+                        .subscribe(function (data) { return _this.response.push(data); }, function (error) { return _this.errorMessage = error; });
+                };
                 Object.defineProperty(CardEditComponent.prototype, "diagnostic", {
                     // Remove this later
                     get: function () { return JSON.stringify(this.card); },

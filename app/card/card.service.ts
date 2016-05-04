@@ -25,14 +25,14 @@ export class CardService {
     getCards(): Observable<Card[]> {
         return this._http.get(this._cardUrl)
             .map((response: Response) => <Card[]>response.json())
-            .do(data => console.log("getCards: " + JSON.stringify(data)))
+            // .do(data => console.log("getCards: " + JSON.stringify(data)))
             .catch(this.handleError);
     }
 
     getCard(id: number): Observable<Card> {
         return this.getCards()
             .map((cards: Card[]) => cards.find(p => p.id === id))
-            .do(data => console.log("getCard: " + JSON.stringify(data)))
+            // .do(data => console.log("getCard: " + JSON.stringify(data)))
             .catch(this.handleError);
     }
 
@@ -56,7 +56,15 @@ export class CardService {
             .catch(this.handleError);
     }
 
+    deleteCard(id: number): Observable<Card> {
+        let body = JSON.stringify(id);
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
 
+        return this._http.delete(this._cardUrl + "/" + id, options)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
 
     private extractData(res: Response) {
         if (res.status < 200 || res.status >= 300) {

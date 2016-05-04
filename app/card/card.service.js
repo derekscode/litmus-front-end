@@ -40,13 +40,11 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                 CardService.prototype.getCards = function () {
                     return this._http.get(this._cardUrl)
                         .map(function (response) { return response.json(); })
-                        .do(function (data) { return console.log("getCards: " + JSON.stringify(data)); })
                         .catch(this.handleError);
                 };
                 CardService.prototype.getCard = function (id) {
                     return this.getCards()
                         .map(function (cards) { return cards.find(function (p) { return p.id === id; }); })
-                        .do(function (data) { return console.log("getCard: " + JSON.stringify(data)); })
                         .catch(this.handleError);
                 };
                 CardService.prototype.addCard = function (card) {
@@ -62,6 +60,14 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                     var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
                     var options = new http_2.RequestOptions({ headers: headers });
                     return this._http.put(this._cardUrl + "/" + updatedCard.id, body, options)
+                        .map(this.extractData)
+                        .catch(this.handleError);
+                };
+                CardService.prototype.deleteCard = function (id) {
+                    var body = JSON.stringify(id);
+                    var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
+                    var options = new http_2.RequestOptions({ headers: headers });
+                    return this._http.delete(this._cardUrl + "/" + id, options)
                         .map(this.extractData)
                         .catch(this.handleError);
                 };
