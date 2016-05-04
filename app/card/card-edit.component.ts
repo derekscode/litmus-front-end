@@ -9,7 +9,7 @@ import { CardService } from './card.service';
 })
 
 export class CardEditComponent {
-    pageTitle: string = 'Card Edit';
+    pageTitle: string = 'Edit Card';
     card: Card;
     errorMessage: string;
 
@@ -32,7 +32,14 @@ export class CardEditComponent {
             card => this.card = card,
             error => this.errorMessage = <any>error);
     }
-    
+
+    updateCard(updatedCard: Card) {
+        this._cardService.updateCard(updatedCard)
+            .subscribe(
+            card => this.card = card,
+            error => this.errorMessage = <any>error);
+    }
+
     // Remove this later
     get diagnostic() { return JSON.stringify(this.card); }
 }

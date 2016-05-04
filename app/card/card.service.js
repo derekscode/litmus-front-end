@@ -57,6 +57,14 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                         .map(this.extractData)
                         .catch(this.handleError);
                 };
+                CardService.prototype.updateCard = function (updatedCard) {
+                    var body = JSON.stringify(updatedCard);
+                    var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
+                    var options = new http_2.RequestOptions({ headers: headers });
+                    return this._http.put(this._cardUrl, body, options)
+                        .map(this.extractData)
+                        .catch(this.handleError);
+                };
                 CardService.prototype.extractData = function (res) {
                     if (res.status < 200 || res.status >= 300) {
                         throw new Error('Bad response status: ' + res.status);

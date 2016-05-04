@@ -29,7 +29,7 @@ System.register(['angular2/core', 'angular2/router', './card.service'], function
                     this._cardService = _cardService;
                     this._router = _router;
                     this._routeParams = _routeParams;
-                    this.pageTitle = 'Card Edit';
+                    this.pageTitle = 'Edit Card';
                 }
                 CardEditComponent.prototype.ngOnInit = function () {
                     if (!this.card) {
@@ -40,6 +40,11 @@ System.register(['angular2/core', 'angular2/router', './card.service'], function
                 CardEditComponent.prototype.getCard = function (id) {
                     var _this = this;
                     this._cardService.getCard(id)
+                        .subscribe(function (card) { return _this.card = card; }, function (error) { return _this.errorMessage = error; });
+                };
+                CardEditComponent.prototype.updateCard = function (updatedCard) {
+                    var _this = this;
+                    this._cardService.updateCard(updatedCard)
                         .subscribe(function (card) { return _this.card = card; }, function (error) { return _this.errorMessage = error; });
                 };
                 Object.defineProperty(CardEditComponent.prototype, "diagnostic", {

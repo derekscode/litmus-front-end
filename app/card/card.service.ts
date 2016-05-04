@@ -47,6 +47,18 @@ export class CardService {
             .catch(this.handleError);
     }
 
+    updateCard(updatedCard: Card): Observable<string> {
+        let body = JSON.stringify(updatedCard);
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+
+        return this._http.put(this._cardUrl, body, options)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
+
+
     private extractData(res: Response) {
         if (res.status < 200 || res.status >= 300) {
             throw new Error('Bad response status: ' + res.status);
