@@ -1,7 +1,7 @@
 import { Component, OnInit } from 'angular2/core'
 import { ROUTER_DIRECTIVES } from 'angular2/router'
 
-import { ICard } from './card'
+import { Card } from './card'
 import { CardService } from './card.service'
 import { CardFilterPipe } from './card-filter.pipe'
 
@@ -14,7 +14,7 @@ import { CardFilterPipe } from './card-filter.pipe'
 
 export class CardListComponent implements OnInit {
     pageTitle: string = 'List';
-    cards: ICard[];
+    cards: Card[];
     errorMessage: string;
     listFilter: string;
     

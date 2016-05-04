@@ -1,7 +1,7 @@
 import { Component } from 'angular2/core'
 import { RouteParams, Router } from 'angular2/router'
 
-import { ICard } from './card';
+import { Card } from './card';
 import { CardService } from './card.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { CardService } from './card.service';
 
 export class CardDetailComponent {
     pageTitle: string = 'Card Detail';
-    card: ICard;
+    card: Card;
     errorMessage: string;
 
     constructor(

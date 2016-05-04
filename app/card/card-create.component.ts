@@ -1,6 +1,5 @@
 import { Component } from 'angular2/core'
 import { CardService } from './card.service';
-import { ICard } from './card';
 import { Card } from './card';
 
 

@@ -3,7 +3,6 @@ import { Http, Response } from 'angular2/http';
 import {Headers, RequestOptions} from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
 
-import { ICard } from './card';
 import { Card } from './card';
 
 @Injectable()
@@ -24,16 +23,16 @@ export class CardService {
 
 
 
-    getCards(): Observable<ICard[]> {
+    getCards(): Observable<Card[]> {
         return this._http.get(this._cardUrl)
-            .map((response: Response) => <ICard[]>response.json())
+            .map((response: Response) => <Card[]>response.json())
             .do(data => console.log("getCards: " + JSON.stringify(data)))
             .catch(this.handleError);
     }
 
-    getCard(id: number): Observable<ICard> {
+    getCard(id: number): Observable<Card> {
         return this.getCards()
-            .map((cards: ICard[]) => cards.find(p => p.id === id))
+            .map((cards: Card[]) => cards.find(p => p.id === id))
             .do(data => console.log("getCard: " + JSON.stringify(data)))
             .catch(this.handleError);
     }
