@@ -11,7 +11,7 @@ System.register(['angular2/core', 'angular2/router', './card.service'], function
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, card_service_1;
-    var CardDetailComponent;
+    var CardEditComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -24,37 +24,40 @@ System.register(['angular2/core', 'angular2/router', './card.service'], function
                 card_service_1 = card_service_1_1;
             }],
         execute: function() {
-            CardDetailComponent = (function () {
-                function CardDetailComponent(_cardService, _router, _routeParams) {
+            CardEditComponent = (function () {
+                function CardEditComponent(_cardService, _router, _routeParams) {
                     this._cardService = _cardService;
                     this._router = _router;
                     this._routeParams = _routeParams;
-                    this.pageTitle = 'Card Detail';
+                    this.pageTitle = 'Card Edit';
                 }
-                CardDetailComponent.prototype.ngOnInit = function () {
+                CardEditComponent.prototype.ngOnInit = function () {
                     if (!this.card) {
                         var id = +this._routeParams.get('id');
                         this.getCard(id);
                     }
                 };
-                CardDetailComponent.prototype.getCard = function (id) {
+                CardEditComponent.prototype.getCard = function (id) {
                     var _this = this;
                     this._cardService.getCard(id)
                         .subscribe(function (card) { return _this.card = card; }, function (error) { return _this.errorMessage = error; });
                 };
-                CardDetailComponent.prototype.onBack = function () {
-                    this._router.navigate(['CardList']);
-                };
-                CardDetailComponent = __decorate([
+                Object.defineProperty(CardEditComponent.prototype, "diagnostic", {
+                    // Remove this later
+                    get: function () { return JSON.stringify(this.card); },
+                    enumerable: true,
+                    configurable: true
+                });
+                CardEditComponent = __decorate([
                     core_1.Component({
-                        templateUrl: 'app/card/card-detail.component.html'
+                        templateUrl: 'app/card/card-edit.component.html'
                     }), 
                     __metadata('design:paramtypes', [card_service_1.CardService, router_1.Router, router_1.RouteParams])
-                ], CardDetailComponent);
-                return CardDetailComponent;
+                ], CardEditComponent);
+                return CardEditComponent;
             }());
-            exports_1("CardDetailComponent", CardDetailComponent);
+            exports_1("CardEditComponent", CardEditComponent);
         }
     }
 });
-//# sourceMappingURL=card-detail.component.js.map
+//# sourceMappingURL=card-edit.component.js.map

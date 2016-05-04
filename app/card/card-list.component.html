@@ -13,6 +13,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>edit</th>
                     <th>Id</th>
                     <th>Card Id</th>
                     <th>State</th>
@@ -30,6 +31,11 @@
             </thead>
             <tbody>
                 <tr *ngFor="#card of cards | cardFilter: listFilter">
+                    <td>
+                        <a [routerLink]="['CardEdit', {id: card.id}]">
+                            edit  
+                        </a>
+                    </td>
                     <td>
                         <a [routerLink]="['CardDetail', {id: card.id}]">
                             {{ card.id }}  

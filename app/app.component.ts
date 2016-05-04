@@ -7,6 +7,7 @@ import {CardService} from './card/card.service'
 
 import {CardListComponent} from './card/card-list.component'
 import {CardDetailComponent} from './card/card-detail.component'
+import {CardEditComponent} from './card/card-edit.component'
 import {CardCreateComponent} from './card/card-create.component'
 
 @Component({
@@ -20,6 +21,7 @@ import {CardCreateComponent} from './card/card-create.component'
 @RouteConfig([
     { path: '/list', name: 'CardList', component: CardListComponent, useAsDefault: true },
     { path: '/detail/:id', name: 'CardDetail', component: CardDetailComponent },
+    { path: '/edit/:id', name: 'CardEdit', component: CardEditComponent },
     { path: '/create', name: 'CardCreate', component: CardCreateComponent }
 ])
 

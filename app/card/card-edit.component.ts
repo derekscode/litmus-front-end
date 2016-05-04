@@ -5,11 +5,11 @@ import { Card } from './card';
 import { CardService } from './card.service';
 
 @Component({
-    templateUrl: 'app/card/card-detail.component.html'
+    templateUrl: 'app/card/card-edit.component.html'
 })
 
-export class CardDetailComponent {
-    pageTitle: string = 'Card Detail';
+export class CardEditComponent {
+    pageTitle: string = 'Card Edit';
     card: Card;
     errorMessage: string;
 
@@ -32,8 +32,8 @@ export class CardDetailComponent {
             card => this.card = card,
             error => this.errorMessage = <any>error);
     }
-
-    onBack(): void {
-        this._router.navigate(['CardList']);
-    }
+    
+    // Remove this later
+    get diagnostic() { return JSON.stringify(this.card); }
 }
+
