@@ -61,7 +61,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                     var body = JSON.stringify(updatedCard);
                     var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
                     var options = new http_2.RequestOptions({ headers: headers });
-                    return this._http.put(this._cardUrl, body, options)
+                    return this._http.put(this._cardUrl + "/" + updatedCard.id, body, options)
                         .map(this.extractData)
                         .catch(this.handleError);
                 };

@@ -22,7 +22,6 @@ export class CardService {
     private _cardUrl = 'http://localhost:8462/api/card';
 
 
-
     getCards(): Observable<Card[]> {
         return this._http.get(this._cardUrl)
             .map((response: Response) => <Card[]>response.json())
@@ -52,7 +51,7 @@ export class CardService {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
-        return this._http.put(this._cardUrl, body, options)
+        return this._http.put(this._cardUrl + "/" + updatedCard.id, body, options)
             .map(this.extractData)
             .catch(this.handleError);
     }

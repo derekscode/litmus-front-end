@@ -26,6 +26,10 @@ export class CardEditComponent {
         }
     }
 
+    onSubmit() {
+        this.updateCard(this.card);
+    }
+
     getCard(id: number) {
         this._cardService.getCard(id)
             .subscribe(
@@ -36,7 +40,7 @@ export class CardEditComponent {
     updateCard(updatedCard: Card) {
         this._cardService.updateCard(updatedCard)
             .subscribe(
-            card => this.card = card,
+            data => this.card.push(data),
             error => this.errorMessage = <any>error);
     }
 
