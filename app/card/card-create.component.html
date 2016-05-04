@@ -7,14 +7,14 @@
 
         <div class="form-group">
             <label for="name">cardId</label>
-            <input type="text" class="form-control" required [(ngModel)]="model.cardId" ngControl="cardId" #name="ngForm">
+            <input type="text" class="form-control" required [(ngModel)]="card.cardId" ngControl="cardId" #name="ngForm">
             <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                 cardId is required
             </div>
         </div>
         <div class="form-group">
             <label for="alterEgo">state</label>
-            <input type="text" class="form-control" [(ngModel)]="model.state" ngControl="state">
+            <input type="text" class="form-control" [(ngModel)]="card.state" ngControl="state">
         </div>
         <button type="submit" class="btn btn-default" [disabled]="!cardForm.form.valid">Submit</button>
         <br>

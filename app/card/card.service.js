@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, Observable_1;
+    var core_1, http_1, http_2, Observable_1;
     var CardService;
     return {
         setters:[
@@ -19,6 +19,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
             },
             function (http_1_1) {
                 http_1 = http_1_1;
+                http_2 = http_1_1;
             },
             function (Observable_1_1) {
                 Observable_1 = Observable_1_1;
@@ -48,9 +49,26 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                         .do(function (data) { return console.log("getCard: " + JSON.stringify(data)); })
                         .catch(this.handleError);
                 };
+                CardService.prototype.addCard = function (card) {
+                    var body = JSON.stringify(card);
+                    var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
+                    var options = new http_2.RequestOptions({ headers: headers });
+                    return this._http.post(this._cardUrl, body, options)
+                        .map(this.extractData)
+                        .catch(this.handleError);
+                };
+                CardService.prototype.extractData = function (res) {
+                    if (res.status < 200 || res.status >= 300) {
+                        throw new Error('Bad response status: ' + res.status);
+                    }
+                    var body = res.json();
+                    return body.data || {};
+                };
                 CardService.prototype.handleError = function (error) {
-                    console.error(error);
-                    return Observable_1.Observable.throw(error.json().error || 'Server error');
+                    // In a real world app, we might send the error to remote logging infrastructure
+                    var errMsg = error.message || 'Server error';
+                    console.error(errMsg); // log to console instead
+                    return Observable_1.Observable.throw(errMsg);
                 };
                 CardService = __decorate([
                     core_1.Injectable(), 
