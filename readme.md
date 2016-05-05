@@ -13,3 +13,6 @@
     This launches the TypeScript compiler (tsc) to compile the application and wait for changes. 
     It also starts the lite-server and launches the browser to run the application.
 
+
+angular 2 breaking changes:
+https://github.com/angular/angular/blob/master/CHANGELOG.md

@@ -30,14 +30,16 @@ System.register(['angular2/core', 'angular2/router', './card.service', './card-f
             CardListComponent = (function () {
                 function CardListComponent(_cardService) {
                     this._cardService = _cardService;
-                    this.pageTitle = 'List';
+                    this.pageTitle = 'Card List';
                 }
                 CardListComponent.prototype.ngOnInit = function () {
                     this.getCards();
+                    console.log('onInit');
                 };
-                CardListComponent.prototype.ngAfterViewInit = function () {
-                    this.getCards();
-                };
+                // ngAfterViewInit(): void {
+                //     this.getCards();
+                //     console.log('onChanges');
+                // }
                 CardListComponent.prototype.getCards = function () {
                     var _this = this;
                     this._cardService.getCards()

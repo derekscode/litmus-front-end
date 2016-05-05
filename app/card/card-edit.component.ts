@@ -29,7 +29,7 @@ export class CardEditComponent {
 
     onSubmit() {
         this.updateCard(this.card);
-        alert("Card updated!");
+        alert("Card updated!");        
         this._router.navigate(['/CardList']);
     }
     
@@ -38,6 +38,7 @@ export class CardEditComponent {
         alert("Card deleted!");
         this._router.navigate(['/CardList']);
     }
+    
     
     
 

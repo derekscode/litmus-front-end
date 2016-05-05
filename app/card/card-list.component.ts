@@ -1,4 +1,4 @@
-import { Component, OnInit } from 'angular2/core'
+import { Component, OnInit, AfterViewInit } from 'angular2/core'
 import { ROUTER_DIRECTIVES } from 'angular2/router'
 
 import { Card } from './card'
@@ -13,22 +13,22 @@ import { CardFilterPipe } from './card-filter.pipe'
 })
 
 export class CardListComponent implements OnInit {
-    pageTitle: string = 'List';
+    pageTitle: string = 'Card List';
     cards: Card[];
     errorMessage: string;
     listFilter: string;
 
-
-    constructor(private _cardService: CardService) {
-    }
+    constructor(private _cardService: CardService) { }
 
     ngOnInit(): void {
         this.getCards();
+        console.log('onInit');   
     }
 
-    ngAfterViewInit(): void {
-        this.getCards();
-    }
+    // ngAfterViewInit(): void {
+    //     this.getCards();
+    //     console.log('onChanges');
+    // }
 
     getCards() {
         this._cardService.getCards()
