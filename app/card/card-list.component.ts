@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from 'angular2/core'
+import { Component, OnInit } from 'angular2/core'
 import { ROUTER_DIRECTIVES } from 'angular2/router'
 
 import { Card } from './card'
@@ -21,14 +21,9 @@ export class CardListComponent implements OnInit {
     constructor(private _cardService: CardService) { }
 
     ngOnInit(): void {
-        this.getCards();
-        console.log('onInit');   
+        this.getCards();   
     }
-
-    // ngAfterViewInit(): void {
-    //     this.getCards();
-    //     console.log('onChanges');
-    // }
+    
 
     getCards() {
         this._cardService.getCards()

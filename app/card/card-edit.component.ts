@@ -28,19 +28,13 @@ export class CardEditComponent {
     }
 
     onSubmit() {
+        // call to service
         this.updateCard(this.card);
-        alert("Card updated!");        
-        this._router.navigate(['/CardList']);
     }
-    
-    onDelete(){
+
+    onDelete() {
         this.deleteCard(this.card.id);
-        alert("Card deleted!");
-        this._router.navigate(['/CardList']);
     }
-    
-    
-    
 
     getCard(id: number) {
         this._cardService.getCard(id)
@@ -50,17 +44,22 @@ export class CardEditComponent {
     }
 
     updateCard(updatedCard: Card) {
+        // call to service to update record in database
         this._cardService.updateCard(updatedCard)
             .subscribe(
             result => this.response = result,
-            error => this.errorMessage = <any>error);
+            error => this.errorMessage = <any>error,
+            () => this._router.navigate(['CardList'])
+            );
     }
 
     deleteCard(id: number) {
         this._cardService.deleteCard(id)
             .subscribe(
             result => this.response = result,
-            error => this.errorMessage = <any>error);
+            error => this.errorMessage = <any>error,
+            () => this._router.navigate(['CardList'])
+            );
     }
 
     // Remove this later

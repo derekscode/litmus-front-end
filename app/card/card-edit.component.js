@@ -38,14 +38,11 @@ System.register(['angular2/core', 'angular2/router', './card.service'], function
                     }
                 };
                 CardEditComponent.prototype.onSubmit = function () {
+                    // call to service
                     this.updateCard(this.card);
-                    alert("Card updated!");
-                    this._router.navigate(['/CardList']);
                 };
                 CardEditComponent.prototype.onDelete = function () {
                     this.deleteCard(this.card.id);
-                    alert("Card deleted!");
-                    this._router.navigate(['/CardList']);
                 };
                 CardEditComponent.prototype.getCard = function (id) {
                     var _this = this;
@@ -54,13 +51,14 @@ System.register(['angular2/core', 'angular2/router', './card.service'], function
                 };
                 CardEditComponent.prototype.updateCard = function (updatedCard) {
                     var _this = this;
+                    // call to service to update record in database
                     this._cardService.updateCard(updatedCard)
-                        .subscribe(function (result) { return _this.response = result; }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (result) { return _this.response = result; }, function (error) { return _this.errorMessage = error; }, function () { return _this._router.navigate(['CardList']); });
                 };
                 CardEditComponent.prototype.deleteCard = function (id) {
                     var _this = this;
                     this._cardService.deleteCard(id)
-                        .subscribe(function (result) { return _this.response = result; }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (result) { return _this.response = result; }, function (error) { return _this.errorMessage = error; }, function () { return _this._router.navigate(['CardList']); });
                 };
                 Object.defineProperty(CardEditComponent.prototype, "diagnostic", {
                     // Remove this later
