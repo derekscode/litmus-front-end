@@ -25,7 +25,7 @@ export class CardListComponent implements OnInit {
     ngOnInit(): void {
         this._cardService.getCards()
             .subscribe(
-                card => this.cards = card,
+                result => this.cards = result,
                 error => this.errorMessage = <any>error);
     }
 

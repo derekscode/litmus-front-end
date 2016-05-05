@@ -40,7 +40,7 @@ System.register(['angular2/core', 'angular2/router', './card.service'], function
                 CardDetailComponent.prototype.getCard = function (id) {
                     var _this = this;
                     this._cardService.getCard(id)
-                        .subscribe(function (card) { return _this.card = card; }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (result) { return _this.card = result; }, function (error) { return _this.errorMessage = error; });
                 };
                 CardDetailComponent.prototype.onBack = function () {
                     this._router.navigate(['CardList']);

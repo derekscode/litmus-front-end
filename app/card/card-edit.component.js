@@ -39,21 +39,28 @@ System.register(['angular2/core', 'angular2/router', './card.service'], function
                 };
                 CardEditComponent.prototype.onSubmit = function () {
                     this.updateCard(this.card);
+                    alert("Record updated!");
+                    this._router.navigate(['CardList']);
+                };
+                CardEditComponent.prototype.onDelete = function () {
+                    this.deleteCard(this.card.id);
+                    alert("Record deleted!");
+                    this._router.navigate(['CardList']);
                 };
                 CardEditComponent.prototype.getCard = function (id) {
                     var _this = this;
                     this._cardService.getCard(id)
-                        .subscribe(function (card) { return _this.card = card; }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (result) { return _this.card = result; }, function (error) { return _this.errorMessage = error; });
                 };
                 CardEditComponent.prototype.updateCard = function (updatedCard) {
                     var _this = this;
                     this._cardService.updateCard(updatedCard)
-                        .subscribe(function (data) { return _this.card.push(data); }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (result) { return _this.response = result; }, function (error) { return _this.errorMessage = error; });
                 };
                 CardEditComponent.prototype.deleteCard = function (id) {
                     var _this = this;
                     this._cardService.deleteCard(id)
-                        .subscribe(function (data) { return _this.response.push(data); }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (result) { return _this.response = result; }, function (error) { return _this.errorMessage = error; });
                 };
                 Object.defineProperty(CardEditComponent.prototype, "diagnostic", {
                     // Remove this later

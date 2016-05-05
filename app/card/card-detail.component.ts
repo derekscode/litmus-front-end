@@ -29,7 +29,7 @@ export class CardDetailComponent {
     getCard(id: number) {
         this._cardService.getCard(id)
             .subscribe(
-            card => this.card = card,
+            result => this.card = result,
             error => this.errorMessage = <any>error);
     }
 

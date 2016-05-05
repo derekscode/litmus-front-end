@@ -35,7 +35,7 @@ System.register(['angular2/core', 'angular2/router', './card.service', './card-f
                 CardListComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this._cardService.getCards()
-                        .subscribe(function (card) { return _this.cards = card; }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (result) { return _this.cards = result; }, function (error) { return _this.errorMessage = error; });
                 };
                 CardListComponent = __decorate([
                     core_1.Component({

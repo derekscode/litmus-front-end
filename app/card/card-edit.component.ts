@@ -12,7 +12,7 @@ export class CardEditComponent {
     pageTitle: string = 'Edit Card';
     card: Card;
     errorMessage: string;
-    response: string[];
+    response: any;
 
     constructor(
         private _cardService: CardService,
@@ -29,26 +29,36 @@ export class CardEditComponent {
 
     onSubmit() {
         this.updateCard(this.card);
+        alert("Record updated!");
+        this._router.navigate(['CardList']);
     }
+    
+    onDelete(){
+        this.deleteCard(this.card.id);
+        alert("Record deleted!");
+        this._router.navigate(['CardList']);
+    }
+    
+    
 
     getCard(id: number) {
         this._cardService.getCard(id)
             .subscribe(
-            card => this.card = card,
+            result => this.card = result,
             error => this.errorMessage = <any>error);
     }
 
     updateCard(updatedCard: Card) {
         this._cardService.updateCard(updatedCard)
             .subscribe(
-            data => this.card.push(data),
+            result => this.response = result,
             error => this.errorMessage = <any>error);
     }
-    
-    deleteCard(id:number){
+
+    deleteCard(id: number) {
         this._cardService.deleteCard(id)
-             .subscribe(
-            data => this.response.push(data),
+            .subscribe(
+            result => this.response = result,
             error => this.errorMessage = <any>error);
     }
 
