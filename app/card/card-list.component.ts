@@ -17,16 +17,24 @@ export class CardListComponent implements OnInit {
     cards: Card[];
     errorMessage: string;
     listFilter: string;
-    
-    
+
+
     constructor(private _cardService: CardService) {
     }
 
     ngOnInit(): void {
+        this.getCards();
+    }
+
+    ngAfterViewInit(): void {
+        this.getCards();
+    }
+
+    getCards() {
         this._cardService.getCards()
             .subscribe(
-                result => this.cards = result,
-                error => this.errorMessage = <any>error);
+            result => this.cards = result,
+            error => this.errorMessage = <any>error);
     }
 
 }

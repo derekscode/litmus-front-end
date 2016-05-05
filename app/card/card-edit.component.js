@@ -39,13 +39,13 @@ System.register(['angular2/core', 'angular2/router', './card.service'], function
                 };
                 CardEditComponent.prototype.onSubmit = function () {
                     this.updateCard(this.card);
-                    alert("Record updated!");
-                    this._router.navigate(['CardList']);
+                    alert("Card updated!");
+                    this._router.navigate(['/CardList']);
                 };
                 CardEditComponent.prototype.onDelete = function () {
                     this.deleteCard(this.card.id);
-                    alert("Record deleted!");
-                    this._router.navigate(['CardList']);
+                    alert("Card deleted!");
+                    this._router.navigate(['/CardList']);
                 };
                 CardEditComponent.prototype.getCard = function (id) {
                     var _this = this;

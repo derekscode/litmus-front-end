@@ -33,6 +33,12 @@ System.register(['angular2/core', 'angular2/router', './card.service', './card-f
                     this.pageTitle = 'List';
                 }
                 CardListComponent.prototype.ngOnInit = function () {
+                    this.getCards();
+                };
+                CardListComponent.prototype.ngAfterViewInit = function () {
+                    this.getCards();
+                };
+                CardListComponent.prototype.getCards = function () {
                     var _this = this;
                     this._cardService.getCards()
                         .subscribe(function (result) { return _this.cards = result; }, function (error) { return _this.errorMessage = error; });

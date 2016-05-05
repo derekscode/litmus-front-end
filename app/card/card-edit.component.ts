@@ -29,14 +29,14 @@ export class CardEditComponent {
 
     onSubmit() {
         this.updateCard(this.card);
-        alert("Record updated!");
-        this._router.navigate(['CardList']);
+        alert("Card updated!");
+        this._router.navigate(['/CardList']);
     }
     
     onDelete(){
         this.deleteCard(this.card.id);
-        alert("Record deleted!");
-        this._router.navigate(['CardList']);
+        alert("Card deleted!");
+        this._router.navigate(['/CardList']);
     }
     
     

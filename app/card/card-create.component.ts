@@ -1,4 +1,6 @@
 import { Component } from 'angular2/core'
+import { Router } from 'angular2/router'
+
 import { CardService } from './card.service';
 import { Card } from './card';
 
@@ -8,8 +10,10 @@ import { Card } from './card';
 })
 
 export class CardCreateComponent {
-    constructor(
-        private _cardService: CardService) {
+       constructor(
+        private _cardService: CardService,
+        private _router: Router
+        ) {
     }
 
     pageTitle: string = 'Create New Card';
@@ -17,19 +21,22 @@ export class CardCreateComponent {
     submitted = false;
     errorMessage: string;
     cards: Card[];
+    response: any;
 
 
     onSubmit() {
         this.submitted = true;
-        // this.addCard(this.card);
         this.addCard(this.card);
+        alert("Card submitted!");
+        this._router.navigate(['CardList']);
+
     }
 
     addCard(card: Card) {
         if (!card) { return; }
         this._cardService.addCard(card)
             .subscribe(
-            data => this.cards.push(data),
+            result => this.response = result,
             error => this.errorMessage = <any>error);
     }
 
