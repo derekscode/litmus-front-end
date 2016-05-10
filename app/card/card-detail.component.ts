@@ -12,6 +12,8 @@ export class CardDetailComponent {
     pageTitle: string = 'Card Detail';
     card: Card;
     errorMessage: string;
+        response: any;
+
 
     constructor(
         private _cardService: CardService,
@@ -31,6 +33,19 @@ export class CardDetailComponent {
             .subscribe(
             result => this.card = result,
             error => this.errorMessage = <any>error);
+    }
+    
+    onDelete() {
+        this.deleteCard(this.card.id);
+    }
+    
+    deleteCard(id: number) {
+        this._cardService.deleteCard(id)
+            .subscribe(
+            result => this.response = result,
+            error => this.errorMessage = <any>error,
+            () => this._router.navigate(['CardList'])
+            );
     }
 
     onBack(): void {

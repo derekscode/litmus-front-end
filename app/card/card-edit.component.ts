@@ -32,10 +32,6 @@ export class CardEditComponent {
         this.updateCard(this.card);
     }
 
-    onDelete() {
-        this.deleteCard(this.card.id);
-    }
-
     getCard(id: number) {
         this._cardService.getCard(id)
             .subscribe(
@@ -53,14 +49,7 @@ export class CardEditComponent {
             );
     }
 
-    deleteCard(id: number) {
-        this._cardService.deleteCard(id)
-            .subscribe(
-            result => this.response = result,
-            error => this.errorMessage = <any>error,
-            () => this._router.navigate(['CardList'])
-            );
-    }
+    
 
     // Remove this later
     get diagnostic() { return JSON.stringify(this.card); }

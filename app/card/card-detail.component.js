@@ -42,6 +42,14 @@ System.register(['angular2/core', 'angular2/router', './card.service'], function
                     this._cardService.getCard(id)
                         .subscribe(function (result) { return _this.card = result; }, function (error) { return _this.errorMessage = error; });
                 };
+                CardDetailComponent.prototype.onDelete = function () {
+                    this.deleteCard(this.card.id);
+                };
+                CardDetailComponent.prototype.deleteCard = function (id) {
+                    var _this = this;
+                    this._cardService.deleteCard(id)
+                        .subscribe(function (result) { return _this.response = result; }, function (error) { return _this.errorMessage = error; }, function () { return _this._router.navigate(['CardList']); });
+                };
                 CardDetailComponent.prototype.onBack = function () {
                     this._router.navigate(['CardList']);
                 };

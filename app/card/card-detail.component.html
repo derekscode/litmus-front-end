@@ -30,11 +30,16 @@
                 <div class='col-md-3'>Expiration:</div>
                 <div class='col-md-6'>{{card.expiration}}</div>
             </div>
+            <div class='row'>
+                <button (click)="onDelete()" class="btn btn-default">Delete</button>
+            </div>
         </div>
+
+
         <div class='row'>
             <div class='col-md-12'>
                 <br/>
-                
+
                 <a class='btn btn-default' (click)='onBack()' style='width:80px'>
                     <i class='glyphicon glyphicon-chevron-left'></i> Back
                 </a>
