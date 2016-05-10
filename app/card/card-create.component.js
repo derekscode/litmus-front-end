@@ -32,14 +32,13 @@ System.register(['angular2/core', 'angular2/router', './card.service', './card']
                     this._cardService = _cardService;
                     this._router = _router;
                     this.pageTitle = 'Create New Card';
-                    this.card = new card_1.Card('F2187', 'CA');
+                    this.card = new card_1.Card();
                     this.submitted = false;
                 }
                 CardCreateComponent.prototype.onSubmit = function () {
                     this.submitted = true;
                     this.addCard(this.card);
-                    alert("Card submitted!");
-                    this._router.navigate(['CardList']);
+                    // alert("Card submitted!");
                 };
                 CardCreateComponent.prototype.addCard = function (card) {
                     var _this = this;
@@ -47,7 +46,7 @@ System.register(['angular2/core', 'angular2/router', './card.service', './card']
                         return;
                     }
                     this._cardService.addCard(card)
-                        .subscribe(function (result) { return _this.response = result; }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (result) { return _this.response = result; }, function (error) { return _this.errorMessage = error; }, function () { return _this._router.navigate(['CardList']); });
                 };
                 Object.defineProperty(CardCreateComponent.prototype, "diagnostic", {
                     // Remove this later

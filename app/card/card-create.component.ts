@@ -17,7 +17,7 @@ export class CardCreateComponent {
     }
 
     pageTitle: string = 'Create New Card';
-    card = new Card('F2187', 'CA');
+    card = new Card();
     submitted = false;
     errorMessage: string;
     cards: Card[];
@@ -27,9 +27,7 @@ export class CardCreateComponent {
     onSubmit() {
         this.submitted = true;
         this.addCard(this.card);
-        alert("Card submitted!");
-        this._router.navigate(['CardList']);
-
+        // alert("Card submitted!");
     }
 
     addCard(card: Card) {
@@ -37,7 +35,9 @@ export class CardCreateComponent {
         this._cardService.addCard(card)
             .subscribe(
             result => this.response = result,
-            error => this.errorMessage = <any>error);
+            error => this.errorMessage = <any>error,
+            () => this._router.navigate(['CardList'])
+            );
     }
 
 
