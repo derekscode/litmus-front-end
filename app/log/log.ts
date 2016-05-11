@@ -4,7 +4,10 @@ export class Log {
     id: number;
     
     // card
-    dateChanged: Date;
+    dateChanged: string;
+    
+    displayDate: new Date(dateChanged);
+    
     cardId: string;
     oldCard: string;
     newCard: string;
