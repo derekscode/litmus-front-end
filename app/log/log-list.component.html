@@ -12,7 +12,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>detail</th>
+                    <!--<th>detail</th>-->
                     <th>Id</th>
                     <th>Card Id</th>
                     <th>Date Changed</th>
@@ -23,11 +23,11 @@
             </thead>
             <tbody>
                 <tr *ngFor="#log of logs">
-                    <td>
-                        <!--<a [routerLink]="['LogDetail', {id: log.id}]">-->
+                    <!--<td>
+                        <a [routerLink]="['LogDetail', {id: log.id}]">
                         detail
-                        <!--</a>-->
-                    </td>
+                        </a>
+                    </td>-->
                     <td> {{ log.id }} </td>
                     <td> {{ log.cardId }} </td>
                     <td> {{ log.displayDateChanged }} </td>

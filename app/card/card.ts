@@ -13,4 +13,7 @@ export class Card {
     hasMagstripe: boolean;
     hasBarcode: boolean;
     location: string;
+    
+    lastChanged: Date;
+    displayLastChanged: string;
 }
