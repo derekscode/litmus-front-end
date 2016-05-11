@@ -32,6 +32,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                 LogService.prototype.getLogs = function () {
                     return this._http.get(this._logUrl)
                         .map(function (response) { return response.json(); })
+                        .do(function (data) { return console.log("getLogs: " + JSON.stringify(data)); })
                         .catch(this.handleError);
                 };
                 LogService.prototype.handleError = function (error) {

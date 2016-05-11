@@ -14,9 +14,8 @@ export class LogListComponent implements OnInit {
     pageTitle: string = 'Log List';
     logs: Log[];
     errorMessage: string;
-    myDate = new Date(1988,3,15); // April 15, 1988
-    myDate2 = new Date('2016-05-10T15:05:56.0045295');
-    
+    // myDate = new Date(1988,3,15); // April 15, 1988
+    // myDate2 = new Date('2016-05-10T15:05:56.0045295');
     
     constructor(private _logService: LogService) { }
 

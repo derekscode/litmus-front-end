@@ -4,9 +4,9 @@ export class Log {
     id: number;
     
     // card
-    dateChanged: string;
+    dateChanged: Date;
     
-    displayDate: new Date(dateChanged);
+    displayDateChanged:string;
     
     cardId: string;
     oldCard: string;

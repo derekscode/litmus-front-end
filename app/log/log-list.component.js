@@ -25,11 +25,11 @@ System.register(['angular2/core', 'angular2/router', './log.service'], function(
             }],
         execute: function() {
             LogListComponent = (function () {
+                // myDate = new Date(1988,3,15); // April 15, 1988
+                // myDate2 = new Date('2016-05-10T15:05:56.0045295');
                 function LogListComponent(_logService) {
                     this._logService = _logService;
                     this.pageTitle = 'Log List';
-                    this.myDate = new Date(1988, 3, 15); // April 15, 1988
-                    this.myDate2 = new Date('2016-05-10T15:05:56.0045295');
                 }
                 LogListComponent.prototype.ngOnInit = function () {
                     this.getLogs();

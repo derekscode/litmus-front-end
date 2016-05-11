@@ -7,7 +7,6 @@ System.register([], function(exports_1, context_1) {
         execute: function() {
             Log = (function () {
                 function Log() {
-                    this.displayDate = (dateChanged);
                 }
                 return Log;
             }());
