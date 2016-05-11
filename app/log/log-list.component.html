@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="page-header">
+        <h1>{{pageTitle}}</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>detail</th>
+                    <th>Id</th>
+                    <th>Card Id</th>
+                    <th>Example Date</th>
+                    <th>Date Changed</th>
+                    <th>Old Card</th>
+                    <th>New Card</th>
+                    <th>User</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="#log of logs">
+                    <td>
+                        <!--<a [routerLink]="['LogDetail', {id: log.id}]">-->
+                        detail
+                        <!--</a>-->
+                    </td>
+                    <td> {{ log.id }} </td>
+                    <td> {{ log.cardId }} </td>
+                    <td> {{ log.exampleDate }} </td>
+                    <td> {{ log.dateChanged | date }} </td>
+                    <td class="col-md-2">
+                        <input value="{{ log.oldCard }}">
+                    </td>
+                    <td class="col-md-2">
+                        <input value="{{ log.newCard }}">
+                    </td>
+                    <td> {{ log.user }} </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

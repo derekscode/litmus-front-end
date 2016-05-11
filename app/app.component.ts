@@ -3,6 +3,7 @@ import { HTTP_PROVIDERS } from 'angular2/http'
 import 'rxjs/Rx';   // Load all features
 import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router'
 
+//Card
 import {CardService} from './card/card.service'
 
 import {CardListComponent} from './card/card-list.component'
@@ -10,19 +11,28 @@ import {CardDetailComponent} from './card/card-detail.component'
 import {CardEditComponent} from './card/card-edit.component'
 import {CardCreateComponent} from './card/card-create.component'
 
+//Log
+import {LogService} from './log/log.service'
+
+import {LogListComponent} from './log/log-list.component'
+
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
     directives: [ROUTER_DIRECTIVES],
-    providers: [CardService, HTTP_PROVIDERS, ROUTER_PROVIDERS]
+    providers: [CardService, LogService, HTTP_PROVIDERS, ROUTER_PROVIDERS]
 })
 
 
 @RouteConfig([
-    { path: '/list', name: 'CardList', component: CardListComponent, useAsDefault: true },
-    { path: '/detail/:id', name: 'CardDetail', component: CardDetailComponent },
-    { path: '/edit/:id', name: 'CardEdit', component: CardEditComponent },
-    { path: '/create', name: 'CardCreate', component: CardCreateComponent }
+    //card 
+    { path: '/card/list', name: 'CardList', component: CardListComponent, useAsDefault: true },
+    { path: '/card/detail/:id', name: 'CardDetail', component: CardDetailComponent },
+    { path: '/card/edit/:id', name: 'CardEdit', component: CardEditComponent },
+    { path: '/card/create', name: 'CardCreate', component: CardCreateComponent },
+    
+    //log
+    { path: '/log/list', name: 'LogList', component: LogListComponent }
 ])
 
 export class AppComponent { 
