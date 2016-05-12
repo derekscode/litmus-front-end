@@ -10,10 +10,10 @@ import { Card } from './card';
 })
 
 export class CardCreateComponent {
-       constructor(
+    constructor(
         private _cardService: CardService,
         private _router: Router
-        ) {
+    ) {
     }
 
     pageTitle: string = 'Create New Card';
@@ -38,6 +38,10 @@ export class CardCreateComponent {
             error => this.errorMessage = <any>error,
             () => this._router.navigate(['CardList'])
             );
+    }
+
+    onBack(): void {
+        this._router.navigate(['CardList']);
     }
 
 
