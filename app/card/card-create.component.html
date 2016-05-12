@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="alterEgo">state</label>
+            <label for="state">state</label>
             <input type="text" class="form-control" [(ngModel)]="card.state" ngControl="state">
         </div>
         <button class='btn btn-default' (click)='onBack()' style='width:80px'>
@@ -21,7 +21,7 @@
         </button>
         <button type="submit" class="btn btn-default" [disabled]="!cardForm.form.valid">Submit</button>
 
+        <!--<br>
         <br>
-        <br>
-        <pre>{{diagnostic}}</pre>
+        <pre>{{diagnostic}}</pre>-->
     </form>
