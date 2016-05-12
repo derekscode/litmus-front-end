@@ -7,17 +7,19 @@ export class Card {
     cardId: string;
     state: string;
     
-    // version: string;
-    // orientation: string;
-    // expiration: string;
-    // birthYear: number;
-    // notes: string;
-    // isDamaged: boolean;
-    // isPaper: boolean;
-    // hasMagstripe: boolean;
-    // hasBarcode: boolean;
-    location: string;
+    version: string;
+    orientation: string;
+    expiration: string;
+    birthYear: number;
     
+    isDamaged: boolean;
+    isPaper: boolean;
+    hasMagstripe: boolean;
+    hasBarcode: boolean;
+    location: string;
+    notes: string;
+
+
     lastChanged: Date;
     displayLastChanged: string;
 }

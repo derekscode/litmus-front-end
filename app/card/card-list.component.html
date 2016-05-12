@@ -5,30 +5,22 @@
 </div>
 
 <div class="row">
-    <p>
-        <!--<b>stateFilter:</b> <input [(ngModel)]='stateFilter' type="text" />-->
-    </p>
-    <p>
-        <b>Filter by Card Id:</b> <input [(ngModel)]='cardIdValues' type="text" />
-    </p>
-    <p>
-        <b>Filter by State:</b> <input [(ngModel)]='stateValues' type="text" />
-    </p>
-    <p>
-        <b>Filter by Location:</b> <input [(ngModel)]='locationValues' type="text" />
-    </p>
-</div>
-
-<div class="row">
     <div class="col-md-10">
         <table class="table">
             <thead>
                 <tr>
-                    <th>edit</th>
-                    <th>detail</th>
+                    <!--<th>edit</th>-->
+                    <!--<th>detail</th>-->
                     <th>Id</th>
-                    <th>Card Id</th>
-                    <th>State</th>
+                    <th>
+                        Card Id
+                        <br>
+                        <input [(ngModel)]='cardIdValues' type="text" />
+                    </th>
+                    <th>State
+                        <br>
+                        <input [(ngModel)]='stateValues' type="text" />
+                    </th>
                     <!--<th>Version</th>
                     <th>Orientation</th>
                     <th>Expiration</th>
@@ -38,28 +30,37 @@
                     <th>IsPaper</th>
                     <th>HasMagstripe</th>
                     <th>HasBarcode</th>-->
-                    <th>Location</th>
+                    <th>Location
+                        <br>
+                        <input [(ngModel)]='locationValues' type="text" />
+                    </th>
                     <th>Last Changed</th>
                 </tr>
             </thead>
             <tbody>
+
                 <tr *ngFor="#card of cards | 
                 cardIdPipe: cardIdValues |
                  statePipe: stateValues |
                  locationPipe: locationValues">
 
-                    <td>
+                    <!--<td>
                         <a [routerLink]="['CardEdit', {id: card.id}]">
                             edit  
                         </a>
-                    </td>
-                    <td>
+                    </td>-->
+                    <!--<td>
                         <a [routerLink]="['CardDetail', {id: card.id}]">
                             detail  
                         </a>
-                    </td>
+                    </td>-->
                     <td>{{ card.id }} </td>
-                    <td>{{ card.cardId }} </td>
+
+                    <td>
+                        <a [routerLink]="['CardEdit', {id: card.id}]">
+                             {{ card.cardId }} 
+                        </a>
+                    </td>
                     <td>{{ card.state }}</td>
                     <!--<td>{{ card.version }}</td>
                     <td>{{ card.orientation }}</td>

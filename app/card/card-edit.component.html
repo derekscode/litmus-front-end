@@ -1,5 +1,4 @@
 <div *ngIf='card'>
-
     <div class="page-header">
         <h1>{{pageTitle}}</h1>
         <br>
@@ -8,23 +7,102 @@
 
     <form (ngSubmit)="onSubmit()" #cardForm="ngForm">
 
-        <div class="form-group">
-            <label for="name">cardId</label>
-            <input type="text" class="form-control" required [(ngModel)]="card.cardId" ngControl="cardId" #name="ngForm">
-            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                cardId is required
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="name">Card Id</label>
+                    <input type="text" class="form-control" required [(ngModel)]="card.cardId" ngControl="cardId" #name="ngForm">
+                    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                        cardId is required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input type="text" class="form-control" [(ngModel)]="card.state" ngControl="state">
+                </div>
+                <div class="form-group">
+                    <label for="version">Version</label>
+                    <input type="text" class="form-control" [(ngModel)]="card.version" ngControl="version">
+                </div>
+                <div class="form-group">
+                    <label for="location">Orientation</label>
+                    <select class="form-control" [(ngModel)]="card.orientation" ngControl="orientation">
+                        <option>Portrait</option>
+                        <option>Landscape</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="expiration">Expiration</label>
+                    <input type="text" class="form-control" [(ngModel)]="card.expiration" ngControl="expiration">
+                </div>
+                <div class="form-group">
+                    <label for="birthYear">Birth Year</label>
+                    <input type="text" class="form-control" [(ngModel)]="card.birthYear" ngControl="birthYear">
+                </div>
+                <div class="form-group">
+                    <label for="notes">Notes</label>
+                    <textarea class="form-control" [(ngModel)]="card.notes" ngControl="notes"></textarea>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="alterEgo">state</label>
-            <input type="text" class="form-control" [(ngModel)]="card.state" ngControl="state">
-        </div>
-        <button class='btn btn-default' (click)='onBack()' style='width:80px'>
-            <i class='glyphicon glyphicon-chevron-left'></i> Back
-        </button>
-        <button type="submit" class="btn btn-default" [disabled]="!cardForm.form.valid">Submit</button>
 
-        <br>
-        <br>
-        <pre>{{diagnostic}}</pre>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <select class="form-control" [(ngModel)]="card.location" ngControl="location">
+                        <option>IDV</option>
+                        <option>Mike Reilly</option>
+                        <option>Scotia Draven</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Last Changed</label>
+                    <div> {{card.displayLastChanged}} </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" [(ngModel)]="card.isDamaged" ngControl="isDamaged">
+                        isDamaged
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" [(ngModel)]="card.isPaper" ngControl="isPaper">
+                        isPaper
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" [(ngModel)]="card.hasMagstripe" ngControl="hasMagstripe">
+                        hasMagstripe
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" [(ngModel)]="card.hasBarcode" ngControl="hasBarcode">
+                        hasBarcode
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <button class='btn btn-default' (click)='onBack()' style='width:80px'>
+                    <i class='glyphicon glyphicon-chevron-left'></i> Back
+                </button>
+                <button type="submit" class="btn btn-default" [disabled]="!cardForm.form.valid">Submit</button>
+            </div>
+
+        </div>
+
     </form>
+
+    <!--<br>
+
+<br>
+<pre>{{diagnostic}}</pre>-->
