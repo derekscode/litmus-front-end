@@ -39,4 +39,4 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         }
     }
 });
-//# sourceMappingURL=card-filter.pipe.js.map
+//# sourceMappingURL=deleteme-card-filter.pipe.js.map

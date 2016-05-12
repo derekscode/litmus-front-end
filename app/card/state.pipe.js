@@ -11,32 +11,32 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var CardFilterPipe;
+    var StatePipe;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            CardFilterPipe = (function () {
-                function CardFilterPipe() {
+            StatePipe = (function () {
+                function StatePipe() {
                 }
-                CardFilterPipe.prototype.transform = function (value, args) {
+                StatePipe.prototype.transform = function (value, args) {
                     var filter = args[0] ? args[0].toLocaleLowerCase() : null;
                     return filter ? value.filter(function (card) {
                         return card.state.toLocaleLowerCase().indexOf(filter) !== -1;
                     }) : value;
                 };
-                CardFilterPipe = __decorate([
+                StatePipe = __decorate([
                     core_1.Pipe({
-                        name: 'cardFilter'
+                        name: 'statePipe'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], CardFilterPipe);
-                return CardFilterPipe;
+                ], StatePipe);
+                return StatePipe;
             }());
-            exports_1("CardFilterPipe", CardFilterPipe);
+            exports_1("StatePipe", StatePipe);
         }
     }
 });
-//# sourceMappingURL=card-filter.pipe.js.map
+//# sourceMappingURL=state.pipe.js.map

@@ -3,20 +3,26 @@ import { ROUTER_DIRECTIVES } from 'angular2/router'
 
 import { Card } from './card'
 import { CardService } from './card.service'
-import { CardFilterPipe } from './card-filter.pipe'
+
+import { CardIdPipe } from './cardId.pipe'
+import { StatePipe } from './state.pipe'
+import { LocationPipe } from './location.pipe'
 
 
 @Component({
     templateUrl: 'app/card/card-list.component.html',
     directives: [ROUTER_DIRECTIVES],
-    pipes: [CardFilterPipe]
+    pipes: [CardIdPipe, StatePipe, LocationPipe]
 })
 
 export class CardListComponent implements OnInit {
     pageTitle: string = 'Card List';
     cards: Card[];
     errorMessage: string;
-    listFilter: string;
+    
+    cardIdValues: string = '';
+    stateValues: string = '';
+    locationValues: string = '';
 
     constructor(private _cardService: CardService) { }
 
