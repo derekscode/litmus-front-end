@@ -6,10 +6,10 @@
     <form (ngSubmit)="onSubmit()" #cardForm="ngForm">
 
         <div class="form-group">
-            <label for="name">cardId</label>
-            <input type="text" class="form-control" required [(ngModel)]="card.cardId" ngControl="cardId" #name="ngForm">
+            <label for="name">Id Number</label>
+            <input type="text" class="form-control" required [(ngModel)]="card.idNumber" ngControl="idNumber" #name="ngForm">
             <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                cardId is required
+                This field is required
             </div>
         </div>
         <div class="form-group">

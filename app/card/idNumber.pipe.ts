@@ -3,13 +3,13 @@ import { Card } from './card';
 
 
 @Pipe({
-    name: 'cardIdPipe'
+    name: 'idNumberPipe'
 })
 
-export class CardIdPipe implements PipeTransform {
+export class IdNumberPipe implements PipeTransform {
     transform(value: Card[], args: string[]): Card[] {
         let filter: string = args[0] ? args[0].toLocaleLowerCase() : null;
         return filter ? value.filter((card: Card) =>
-            card.cardId.toLocaleLowerCase().indexOf(filter) !== -1) : value;
+            card.idNumber.toLocaleLowerCase().indexOf(filter) !== -1) : value;
     }
 }

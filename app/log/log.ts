@@ -6,9 +6,9 @@ export class Log {
     // card
     dateChanged: Date;
     
-    displayDateChanged:string;
+    displayDateChanged: string;
     
-    cardId: string;
+    idNumber: string;
     oldCard: string;
     newCard: string;
     user: string;    

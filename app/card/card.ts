@@ -4,7 +4,7 @@ export class Card {
         this.location = "IDV"
     }
     id: number;
-    cardId: string;
+    idNumber: string;
     state: string;
     
     version: string;

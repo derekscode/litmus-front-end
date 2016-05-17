@@ -13,9 +13,9 @@
                     <!--<th>detail</th>-->
                     <th>Id</th>
                     <th>
-                        Card Id
+                        Id Number
                         <br>
-                        <input [(ngModel)]='cardIdValues' type="text" />
+                        <input [(ngModel)]='idNumberValues' type="text" />
                     </th>
                     <th>State
                         <br>
@@ -40,7 +40,7 @@
             <tbody>
 
                 <tr *ngFor="#card of cards | 
-                cardIdPipe: cardIdValues |
+                idNumberPipe: idNumberValues |
                  statePipe: stateValues |
                  locationPipe: locationValues">
 
@@ -58,7 +58,7 @@
 
                     <td>
                         <a [routerLink]="['CardEdit', {id: card.id}]">
-                             {{ card.cardId }} 
+                             {{ card.idNumber }} 
                         </a>
                     </td>
                     <td>{{ card.state }}</td>

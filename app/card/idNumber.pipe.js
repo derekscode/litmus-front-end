@@ -11,32 +11,32 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var CardFilterPipe;
+    var IdNumberPipe;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            CardFilterPipe = (function () {
-                function CardFilterPipe() {
+            IdNumberPipe = (function () {
+                function IdNumberPipe() {
                 }
-                CardFilterPipe.prototype.transform = function (value, args) {
+                IdNumberPipe.prototype.transform = function (value, args) {
                     var filter = args[0] ? args[0].toLocaleLowerCase() : null;
                     return filter ? value.filter(function (card) {
-                        return card.state.toLocaleLowerCase().indexOf(filter) !== -1;
+                        return card.idNumber.toLocaleLowerCase().indexOf(filter) !== -1;
                     }) : value;
                 };
-                CardFilterPipe = __decorate([
+                IdNumberPipe = __decorate([
                     core_1.Pipe({
-                        name: 'cardFilter'
+                        name: 'idNumberPipe'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], CardFilterPipe);
-                return CardFilterPipe;
+                ], IdNumberPipe);
+                return IdNumberPipe;
             }());
-            exports_1("CardFilterPipe", CardFilterPipe);
+            exports_1("IdNumberPipe", IdNumberPipe);
         }
     }
 });
-//# sourceMappingURL=deleteme-card-filter.pipe.js.map
+//# sourceMappingURL=idNumber.pipe.js.map

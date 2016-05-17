@@ -1,47 +1,44 @@
-[
-    {
-        "id": 1,
-        "cardId": "F11111111",
-        "state": "CA",
-        "version": "api/cards/cards.json",
-        "orientation": "L",
-        "expiration": "2/12/2017",
-        "birthYear": 1974,
-        "notes": "Dirty back",
-        "isDamaged": true,
-        "isPaper": true,
-        "hasMagstripe": false,
-        "hasBarcode": false,
-        "location": "IDV"
-    },
-    {
-        "id": 2,
-        "cardId": "F2222222",
-        "state": "KS",
-        "version": "2015R1",
-        "orientation": "P",
-        "expiration": "1/2/2020",
-        "birthYear": 1984,
-        "notes": "Under age.",
-        "isDamaged": false,
-        "isPaper": true,
-        "hasMagstripe": true,
-        "hasBarcode": false,
-        "location": "SD"
-    },
-    {
-        "id": 3,
-        "cardId": "F3333333",
-        "state": "IL",
-        "version": "2015R1",
-        "orientation": "L",
-        "expiration": "2/12/2017",
-        "birthYear": 1990,
-        "notes": "Customer contacted",
-        "isDamaged": true,
-        "isPaper": false,
-        "hasMagstripe": false,
-        "hasBarcode": true,
-        "location": "MR"
-    }
-]
+// [
+//     {
+//         "id": 1,
+//         "state": "CA",
+//         "version": "api/cards/cards.json",
+//         "orientation": "L",
+//         "expiration": "2/12/2017",
+//         "birthYear": 1974,
+//         "notes": "Dirty back",
+//         "isDamaged": true,
+//         "isPaper": true,
+//         "hasMagstripe": false,
+//         "hasBarcode": false,
+//         "location": "IDV"
+//     },
+//     {
+//         "id": 2,
+//         "state": "KS",
+//         "version": "2015R1",
+//         "orientation": "P",
+//         "expiration": "1/2/2020",
+//         "birthYear": 1984,
+//         "notes": "Under age.",
+//         "isDamaged": false,
+//         "isPaper": true,
+//         "hasMagstripe": true,
+//         "hasBarcode": false,
+//         "location": "SD"
+//     },
+//     {
+//         "id": 3,
+//         "state": "IL",
+//         "version": "2015R1",
+//         "orientation": "L",
+//         "expiration": "2/12/2017",
+//         "birthYear": 1990,
+//         "notes": "Customer contacted",
+//         "isDamaged": true,
+//         "isPaper": false,
+//         "hasMagstripe": false,
+//         "hasBarcode": true,
+//         "location": "MR"
+//     }
+// ]

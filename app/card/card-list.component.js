@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './card.service', './cardId.pipe', './state.pipe', './location.pipe'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './card.service', './idNumber.pipe', './state.pipe', './location.pipe'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './card.service', './cardId
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, card_service_1, cardId_pipe_1, state_pipe_1, location_pipe_1;
+    var core_1, router_1, card_service_1, idNumber_pipe_1, state_pipe_1, location_pipe_1;
     var CardListComponent;
     return {
         setters:[
@@ -23,8 +23,8 @@ System.register(['angular2/core', 'angular2/router', './card.service', './cardId
             function (card_service_1_1) {
                 card_service_1 = card_service_1_1;
             },
-            function (cardId_pipe_1_1) {
-                cardId_pipe_1 = cardId_pipe_1_1;
+            function (idNumber_pipe_1_1) {
+                idNumber_pipe_1 = idNumber_pipe_1_1;
             },
             function (state_pipe_1_1) {
                 state_pipe_1 = state_pipe_1_1;
@@ -37,7 +37,7 @@ System.register(['angular2/core', 'angular2/router', './card.service', './cardId
                 function CardListComponent(_cardService) {
                     this._cardService = _cardService;
                     this.pageTitle = 'Card List';
-                    this.cardIdValues = '';
+                    this.idNumberValues = '';
                     this.stateValues = '';
                     this.locationValues = '';
                 }
@@ -53,7 +53,7 @@ System.register(['angular2/core', 'angular2/router', './card.service', './cardId
                     core_1.Component({
                         templateUrl: 'app/card/card-list.component.html',
                         directives: [router_1.ROUTER_DIRECTIVES],
-                        pipes: [cardId_pipe_1.CardIdPipe, state_pipe_1.StatePipe, location_pipe_1.LocationPipe]
+                        pipes: [idNumber_pipe_1.IdNumberPipe, state_pipe_1.StatePipe, location_pipe_1.LocationPipe]
                     }), 
                     __metadata('design:paramtypes', [card_service_1.CardService])
                 ], CardListComponent);

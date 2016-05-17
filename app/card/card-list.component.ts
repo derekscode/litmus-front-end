@@ -4,7 +4,7 @@ import { ROUTER_DIRECTIVES } from 'angular2/router'
 import { Card } from './card'
 import { CardService } from './card.service'
 
-import { CardIdPipe } from './cardId.pipe'
+import { IdNumberPipe } from './idNumber.pipe'
 import { StatePipe } from './state.pipe'
 import { LocationPipe } from './location.pipe'
 
@@ -12,7 +12,7 @@ import { LocationPipe } from './location.pipe'
 @Component({
     templateUrl: 'app/card/card-list.component.html',
     directives: [ROUTER_DIRECTIVES],
-    pipes: [CardIdPipe, StatePipe, LocationPipe]
+    pipes: [IdNumberPipe, StatePipe, LocationPipe]
 })
 
 export class CardListComponent implements OnInit {
@@ -20,7 +20,7 @@ export class CardListComponent implements OnInit {
     cards: Card[];
     errorMessage: string;
     
-    cardIdValues: string = '';
+    idNumberValues: string = '';
     stateValues: string = '';
     locationValues: string = '';
 
