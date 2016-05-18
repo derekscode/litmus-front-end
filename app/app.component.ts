@@ -7,7 +7,6 @@ import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/route
 import {CardService} from './card/card.service'
 
 import {CardListComponent} from './card/card-list.component'
-import {CardDetailComponent} from './card/card-detail.component'
 import {CardEditComponent} from './card/card-edit.component'
 import {CardCreateComponent} from './card/card-create.component'
 
@@ -27,7 +26,6 @@ import {LogListComponent} from './log/log-list.component'
 @RouteConfig([
     //card 
     { path: '/card/list', name: 'CardList', component: CardListComponent, useAsDefault: true },
-    { path: '/card/detail/:id', name: 'CardDetail', component: CardDetailComponent },
     { path: '/card/edit/:id', name: 'CardEdit', component: CardEditComponent },
     { path: '/card/create', name: 'CardCreate', component: CardCreateComponent },
     

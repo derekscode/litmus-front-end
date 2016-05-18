@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router', './card/card.service', './card/card-list.component', './card/card-detail.component', './card/card-edit.component', './card/card-create.component', './log/log.service', './log/log-list.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router', './card/card.service', './card/card-list.component', './card/card-edit.component', './card/card-create.component', './log/log.service', './log/log-list.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, router_1, card_service_1, card_list_component_1, card_detail_component_1, card_edit_component_1, card_create_component_1, log_service_1, log_list_component_1;
+    var core_1, http_1, router_1, card_service_1, card_list_component_1, card_edit_component_1, card_create_component_1, log_service_1, log_list_component_1;
     var AppComponent;
     return {
         setters:[
@@ -29,9 +29,6 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router',
             },
             function (card_list_component_1_1) {
                 card_list_component_1 = card_list_component_1_1;
-            },
-            function (card_detail_component_1_1) {
-                card_detail_component_1 = card_detail_component_1_1;
             },
             function (card_edit_component_1_1) {
                 card_edit_component_1 = card_edit_component_1_1;
@@ -60,7 +57,6 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router',
                     router_1.RouteConfig([
                         //card 
                         { path: '/card/list', name: 'CardList', component: card_list_component_1.CardListComponent, useAsDefault: true },
-                        { path: '/card/detail/:id', name: 'CardDetail', component: card_detail_component_1.CardDetailComponent },
                         { path: '/card/edit/:id', name: 'CardEdit', component: card_edit_component_1.CardEditComponent },
                         { path: '/card/create', name: 'CardCreate', component: card_create_component_1.CardCreateComponent },
                         //log
