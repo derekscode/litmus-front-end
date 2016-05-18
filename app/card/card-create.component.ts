@@ -36,8 +36,12 @@ export class CardCreateComponent {
             .subscribe(
             result => this.response = result,
             error => this.errorMessage = <any>error,
-            () => this._router.navigate(['CardList'])
+            () => this.navigatetoCardEdit()
             );
+    }
+
+    navigatetoCardEdit() {
+        this._router.navigate(['CardEdit', { id: 4 }]);
     }
 
     onBack(): void {
