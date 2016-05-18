@@ -1,15 +1,20 @@
 export class Log {
-    
+
     // log
     id: number;
-    
+
     // card
+    cardId: number;
+    // renamed idNumber to cardIdNumber 
+    cardIdNumber: string;
+
+
     dateChanged: Date;
-    
+
     displayDateChanged: string;
-    
-    idNumber: string;
+
+
     oldCard: string;
     newCard: string;
-    user: string;    
+    user: string;
 }
