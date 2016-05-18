@@ -49,7 +49,8 @@ System.register(['angular2/core', 'angular2/router', './card.service', './card']
                         .subscribe(function (result) { return _this.response = result; }, function (error) { return _this.errorMessage = error; }, function () { return _this.navigatetoCardEdit(); });
                 };
                 CardCreateComponent.prototype.navigatetoCardEdit = function () {
-                    this._router.navigate(['CardEdit', { id: 4 }]);
+                    var newId = this.response.id;
+                    this._router.navigate(['CardEdit', { id: newId }]);
                 };
                 CardCreateComponent.prototype.onBack = function () {
                     this._router.navigate(['CardList']);

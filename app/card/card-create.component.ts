@@ -41,7 +41,8 @@ export class CardCreateComponent {
     }
 
     navigatetoCardEdit() {
-        this._router.navigate(['CardEdit', { id: 4 }]);
+        var newId = this.response.id;
+        this._router.navigate(['CardEdit', { id: newId }]);
     }
 
     onBack(): void {
