@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './log.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './log.service', './dateString.pipe'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './log.service'], function(
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, log_service_1;
+    var core_1, router_1, log_service_1, dateString_pipe_1;
     var LogListComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['angular2/core', 'angular2/router', './log.service'], function(
             },
             function (log_service_1_1) {
                 log_service_1 = log_service_1_1;
+            },
+            function (dateString_pipe_1_1) {
+                dateString_pipe_1 = dateString_pipe_1_1;
             }],
         execute: function() {
             LogListComponent = (function () {
@@ -42,7 +45,8 @@ System.register(['angular2/core', 'angular2/router', './log.service'], function(
                 LogListComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/log/log-list.component.html',
-                        directives: [router_1.ROUTER_DIRECTIVES]
+                        directives: [router_1.ROUTER_DIRECTIVES],
+                        pipes: [dateString_pipe_1.DateString]
                     }), 
                     __metadata('design:paramtypes', [log_service_1.LogService])
                 ], LogListComponent);

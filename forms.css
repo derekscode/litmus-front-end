@@ -5,3 +5,11 @@
 .ng-invalid {
   border-left: 5px solid #a94442; /* red */
 }
+
+.input-short {
+  width:50px;  
+}
+
+.input-medium {
+  width:100px;  
+}

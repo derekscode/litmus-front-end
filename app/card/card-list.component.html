@@ -15,11 +15,11 @@
                     <th>
                         Id Number
                         <br>
-                        <input [(ngModel)]='idNumberValues' type="text" />
+                        <input class="input-medium" [(ngModel)]='idNumberValues' type="text" />
                     </th>
                     <th>State
                         <br>
-                        <input [(ngModel)]='stateValues' type="text" />
+                        <input class="input-short" [(ngModel)]='stateValues' type="text" />
                     </th>
                     <th>Version</th>
                     <th>Orientation</th>
@@ -32,33 +32,33 @@
                     <th>HasBarcode</th>
                     <th>Location
                         <br>
-                        <input [(ngModel)]='locationValues' type="text" />
+                        <input class="input-short"  [(ngModel)]='locationValues' type="text" />
                     </th>
                     <th>Last Changed</th>
                 </tr>
             </thead>
             <tbody>
 
-                <tr *ngFor="#card of cards | 
+                <tr *ngFor="#card of cards |
                 idNumberPipe: idNumberValues |
                  statePipe: stateValues |
                  locationPipe: locationValues">
 
                     <!--<td>
                         <a [routerLink]="['CardEdit', {id: card.id}]">
-                            edit  
+                            edit
                         </a>
                     </td>-->
                     <!--<td>
                         <a [routerLink]="['CardDetail', {id: card.id}]">
-                            detail  
+                            detail
                         </a>
                     </td>-->
                     <td>{{ card.id }} </td>
 
                     <td>
                         <a [routerLink]="['CardEdit', {id: card.id}]">
-                             {{ card.idNumber }} 
+                             {{ card.idNumber }}
                         </a>
                     </td>
                     <td>{{ card.state }}</td>
