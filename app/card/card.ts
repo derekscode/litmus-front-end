@@ -18,7 +18,8 @@ export class Card {
     hasBarcode: boolean;
     location: string;
     notes: string;
-
+    
+    active: boolean;
 
     lastChanged: Date;
     displayLastChanged: string;
