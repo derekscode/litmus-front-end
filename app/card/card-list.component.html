@@ -9,8 +9,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <!--<th>edit</th>-->
-                    <!--<th>detail</th>-->
+                   
                     <th>Id</th>
                     <th>
                         Id Number
@@ -32,7 +31,7 @@
                     <th>HasBarcode</th>
                     <th>Location
                         <br>
-                        <input class="input-short"  [(ngModel)]='locationValues' type="text" />
+                        <input class="input-short" [(ngModel)]='locationValues' type="text" />
                     </th>
                     <th>Last Changed</th>
                 </tr>
@@ -44,16 +43,6 @@
                  statePipe: stateValues |
                  locationPipe: locationValues">
 
-                    <!--<td>
-                        <a [routerLink]="['CardEdit', {id: card.id}]">
-                            edit
-                        </a>
-                    </td>-->
-                    <!--<td>
-                        <a [routerLink]="['CardDetail', {id: card.id}]">
-                            detail
-                        </a>
-                    </td>-->
                     <td>{{ card.id }} </td>
 
                     <td>

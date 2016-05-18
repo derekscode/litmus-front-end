@@ -15,7 +15,7 @@ export class LogService {
     getLogs(): Observable<Log[]> {
         return this._http.get(this._logUrl)
             .map((response: Response) => <Log[]>response.json())
-            .do(data => console.log("getLogs: " + JSON.stringify(data)))
+            // .do(data => console.log("getLogs: " + JSON.stringify(data)))
             .catch(this.handleError);
     }
     

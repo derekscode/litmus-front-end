@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './log.service', './dateString.pipe'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './log.service', './dateString.pipe', './prettyPrint.pipe', './cardIdNumber.pipe'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './log.service', './dateStr
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, log_service_1, dateString_pipe_1;
+    var core_1, router_1, log_service_1, dateString_pipe_1, prettyPrint_pipe_1, cardIdNumber_pipe_1;
     var LogListComponent;
     return {
         setters:[
@@ -25,14 +25,19 @@ System.register(['angular2/core', 'angular2/router', './log.service', './dateStr
             },
             function (dateString_pipe_1_1) {
                 dateString_pipe_1 = dateString_pipe_1_1;
+            },
+            function (prettyPrint_pipe_1_1) {
+                prettyPrint_pipe_1 = prettyPrint_pipe_1_1;
+            },
+            function (cardIdNumber_pipe_1_1) {
+                cardIdNumber_pipe_1 = cardIdNumber_pipe_1_1;
             }],
         execute: function() {
             LogListComponent = (function () {
-                // myDate = new Date(1988,3,15); // April 15, 1988
-                // myDate2 = new Date('2016-05-10T15:05:56.0045295');
                 function LogListComponent(_logService) {
                     this._logService = _logService;
                     this.pageTitle = 'Log List';
+                    this.idNumberValues = '';
                 }
                 LogListComponent.prototype.ngOnInit = function () {
                     this.getLogs();
@@ -46,7 +51,7 @@ System.register(['angular2/core', 'angular2/router', './log.service', './dateStr
                     core_1.Component({
                         templateUrl: 'app/log/log-list.component.html',
                         directives: [router_1.ROUTER_DIRECTIVES],
-                        pipes: [dateString_pipe_1.DateString]
+                        pipes: [dateString_pipe_1.DateString, prettyPrint_pipe_1.PrettyPrintPipe, cardIdNumber_pipe_1.CardIdNumberPipe]
                     }), 
                     __metadata('design:paramtypes', [log_service_1.LogService])
                 ], LogListComponent);

@@ -12,38 +12,36 @@
         <table class="table">
             <thead>
                 <tr>
-                    <!--<th>detail</th>-->
                     <th>Log Id</th>
                     <th>Card Id</th>
-                    <th>Card Id Number</th>
+                    <th>
+                        Card Id Number
+                        <br>
+                        <input class="input-medium" [(ngModel)]='idNumberValues' type="text" />
+                    </th>
                     <th>Date Changed</th>
-                    <!--<th>Display Date Changed</th>-->
                     <th>Old Card</th>
                     <th>New Card</th>
                     <th>User</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="#log of logs">
-                    <!--<td>
-                        <a [routerLink]="['LogDetail', {id: log.id}]">
-                        detail
-                        </a>
-                    </td>-->
+                <tr *ngFor="#log of logs | cardIdNumberPipe: idNumberValues">
+                    
                     <td> {{ log.id }} </td>
                     <td> {{ log.cardId }} </td>
                     <td> {{ log.cardIdNumber }} </td>
                     <td> {{ log.dateChanged | dateString: 'medium' }} </td>
-                    <!--<td> {{ log.displayDateChanged }} </td>-->
+                    
                     <td class="col-md-2">
-                     
-                        <!--<pre>
-                            {{ log.oldCard }}
-                        </pre>-->
-                        <input value="{{ log.oldCard }}">
+                        <pre>
+                            <div [innerHTML]="log.oldCard | prettyPrint"></div>
+                        </pre>
                     </td>
                     <td class="col-md-2">
-                        <input value="{{ log.newCard }}">
+                        <pre>
+                            <div [innerHTML]="log.newCard | prettyPrint"></div>
+                        </pre>
                     </td>
                     <td> {{ log.user }} </td>
                 </tr>
@@ -52,16 +50,3 @@
         </table>
     </div>
 </div>
-
-
-<table>
-    <thead>
-        <tr>
-            <th>Heading</th>
-        </tr>
-    </thead>
-    <tr>
-        <td></td>
-    </tr>
-</table>
-<tr *ngFor="#log of logs">
