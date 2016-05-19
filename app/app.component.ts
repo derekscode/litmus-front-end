@@ -15,11 +15,14 @@ import {LogService} from './log/log.service'
 
 import {LogListComponent} from './log/log-list.component'
 
+//Location
+import { LocationService } from './location/location.service';
+
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
     directives: [ROUTER_DIRECTIVES],
-    providers: [CardService, LogService, HTTP_PROVIDERS, ROUTER_PROVIDERS]
+    providers: [CardService, LogService, LocationService, HTTP_PROVIDERS, ROUTER_PROVIDERS]
 })
 
 

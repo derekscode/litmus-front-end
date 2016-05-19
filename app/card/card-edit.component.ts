@@ -3,6 +3,8 @@ import { RouteParams, Router } from 'angular2/router'
 
 import { Card } from './card';
 import { CardService } from './card.service';
+import { LocationService } from '../location/location.service';
+
 
 @Component({
     templateUrl: 'app/card/card-edit.component.html'
@@ -13,9 +15,12 @@ export class CardEditComponent {
     card: Card;
     errorMessage: string;
     response: any;
+    
+    locations: any;
 
     constructor(
         private _cardService: CardService,
+        private _locationService: LocationService,
         private _router: Router,
         private _routeParams: RouteParams) {
     }
@@ -24,12 +29,20 @@ export class CardEditComponent {
         if (!this.card) {
             let id = +this._routeParams.get('id');
             this.getCard(id);
+            this.getLocations();
         }
     }
 
     onSubmit() {
         // call to service
         this.updateCard(this.card);
+    }
+    
+     getLocations() {
+        this._locationService.getLocations()
+            .subscribe(
+            result => this.locations = result,
+            error => this.errorMessage = <any>error);
     }
 
     getCard(id: number) {
