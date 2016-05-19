@@ -70,6 +70,9 @@ System.register(['angular2/core', 'angular2/router', './card.service', '../locat
                     this._cardService.deleteCard(id)
                         .subscribe(function (result) { return _this.response = result; }, function (error) { return _this.errorMessage = error; }, function () { return _this._router.navigate(['CardList']); });
                 };
+                CardEditComponent.prototype.onBack = function () {
+                    this._router.navigate(['CardList']);
+                };
                 Object.defineProperty(CardEditComponent.prototype, "diagnostic", {
                     // Remove this later
                     get: function () { return JSON.stringify(this.card); },

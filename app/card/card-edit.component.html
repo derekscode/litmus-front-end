@@ -13,7 +13,7 @@
                     <label for="name">Id Number</label>
                     <input type="text" class="form-control" required [(ngModel)]="card.idNumber" ngControl="idNumber" #name="ngForm">
                     <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                        idNumber is required
+                        This field is required
                     </div>
                 </div>
                 <div class="form-group">

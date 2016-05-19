@@ -15,7 +15,7 @@ export class CardEditComponent {
     card: Card;
     errorMessage: string;
     response: any;
-    
+
     locations: any;
 
     constructor(
@@ -37,8 +37,8 @@ export class CardEditComponent {
         // call to service
         this.updateCard(this.card);
     }
-    
-     getLocations() {
+
+    getLocations() {
         this._locationService.getLocations()
             .subscribe(
             result => this.locations = result,
@@ -73,6 +73,10 @@ export class CardEditComponent {
             error => this.errorMessage = <any>error,
             () => this._router.navigate(['CardList'])
             );
+    }
+
+    onBack(): void {
+        this._router.navigate(['CardList']);
     }
 
 
