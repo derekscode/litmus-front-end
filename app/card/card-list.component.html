@@ -5,12 +5,13 @@
 </div>
 
 <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-12">
         <table class="table table-striped">
             <thead>
                 <tr class="info">
                    
-                    <th>Id</th>
+                    <!--Id-->
+                    <th>Record Number</th>
                     <th>
                         Id Number
                         <br>
@@ -25,15 +26,15 @@
                     <th>Expiration</th>
                     <th>Birth Year</th>
                     <th>Notes</th>
-                    <th>IsDamaged</th>
-                    <th>IsPaper</th>
-                    <th>HasMagstripe</th>
-                    <th>HasBarcode</th>
+                    <th>Damaged</th>
+                    <th>Paper</th>
+                    <th>Magstripe</th>
+                    <th>Barcode</th>
                     <th>Location
                         <br>
                         <input class="input-short" [(ngModel)]='locationValues' type="text" />
                     </th>
-                    <th>Last Changed</th>
+                    <th style="width:300px;">Last Changed</th>
                 </tr>
             </thead>
             <tbody>

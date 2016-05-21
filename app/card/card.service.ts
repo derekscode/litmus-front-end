@@ -20,12 +20,10 @@ export class CardService {
 
     // Litmus
     private _cardUrl = 'http://localhost:8462/api/card';
-
-
+    
     getCards(): Observable<Card[]> {
         return this._http.get(this._cardUrl)
             .map((response: Response) => <Card[]>response.json())
-            // .do(data => console.log("getCards: " + JSON.stringify(data)))
             .catch(this.handleError);
     }
 
