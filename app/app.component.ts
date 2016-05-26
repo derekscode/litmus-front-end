@@ -18,11 +18,17 @@ import {LogListComponent} from './log/log-list.component'
 //Location
 import { LocationService } from './location/location.service';
 
+//xhr
+import {BrowserXhr} from "angular2/http";
+import {Injectable, provide} from "angular2/core";
+import { CORSBrowserXHR } from './xhr'
+
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
     directives: [ROUTER_DIRECTIVES],
-    providers: [CardService, LogService, LocationService, HTTP_PROVIDERS, ROUTER_PROVIDERS]
+    providers: [CardService, LogService, LocationService,
+        ROUTER_PROVIDERS, HTTP_PROVIDERS, provide(BrowserXhr, { useClass: CORSBrowserXHR })]
 })
 
 
@@ -31,11 +37,11 @@ import { LocationService } from './location/location.service';
     { path: '/card/list', name: 'CardList', component: CardListComponent, useAsDefault: true },
     { path: '/card/edit/:id', name: 'CardEdit', component: CardEditComponent },
     { path: '/card/create', name: 'CardCreate', component: CardCreateComponent },
-    
+
     //log
     { path: '/log/list', name: 'LogList', component: LogListComponent }
 ])
 
-export class AppComponent { 
+export class AppComponent {
     pageTitle: string = 'My App';
 }
