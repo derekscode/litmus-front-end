@@ -43,5 +43,34 @@ import { CORSBrowserXHR } from './extensions/xhr'
 ])
 
 export class AppComponent {
+    constructor(private _cardService: CardService) { }
     pageTitle: string = 'My App';
+    
+    admin: boolean;
+    userStatus: string = 'userStatus';
+
+    errorMessage: string;
+
+
+    ngOnInit(): void {
+        this.userIsAdmin();
+    }
+
+    userIsAdmin() {
+        this._cardService.userIsAdmin()
+            .subscribe(
+            result => this.admin = result,
+            error => this.errorMessage = <any>error,
+            () => this.getUserStatus()
+            );
+    }
+
+    getUserStatus() {
+        if (this.admin == true) {
+            this.userStatus = "admin";
+        } else {
+            this.userStatus = "user";
+        }
+    }
 }
+

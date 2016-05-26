@@ -13,9 +13,7 @@
 
 
             <a class="navbar-brand" href="#">
-                <span style="padding-right:5px;" class="glyphicon glyphicon-credit-card pull-left" aria-hidden="true"></span>
-                
-                Litmus
+                <span style="padding-right:5px;" class="glyphicon glyphicon-credit-card pull-left" aria-hidden="true"></span>                Litmus
             </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -23,9 +21,15 @@
                 <!--<li class="active"><a href="#">Home</a></li>-->
                 <li><a [routerLink]="['CardList']">Card List</a></li>
                 <li><a [routerLink]="['CardCreate']">Create Card</a></li>
-
                 <li><a [routerLink]="['LogList']">Log List</a></li>
                 <!--<li><a [routerLink]="['IdDetail']">Id Detail</a></li>-->
+            </ul>
+            <ul>
+                <li>
+                    <button class="btn btn-warning pull-right" style="margin:8px;">
+                        {{ userStatus }}
+                    </button>
+                </li>
             </ul>
         </div>
         <!--/.nav-collapse -->

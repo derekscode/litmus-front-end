@@ -16,6 +16,8 @@ export class LocationService {
             .do(data => console.log("data: " + JSON.stringify(data)))
             .catch(this.handleError);
     }
+    
+    
 
     private handleError(error: any) {
         let errMsg = error.message || 'Server error';

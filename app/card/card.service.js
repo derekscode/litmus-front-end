@@ -37,6 +37,12 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                     // Litmus
                     this._cardUrl = 'http://localhost:8462/api/card';
                 }
+                // http://localhost:8462/api/card/UserIsAdmin
+                CardService.prototype.userIsAdmin = function () {
+                    return this._http.get(this._cardUrl + "/UserIsAdmin")
+                        .map(function (response) { return response.json(); })
+                        .catch(this.handleError);
+                };
                 CardService.prototype.getCards = function () {
                     return this._http.get(this._cardUrl)
                         .map(function (response) { return response.json(); })

@@ -16,20 +16,21 @@ import { LocationPipe } from './location.pipe'
 })
 
 export class CardListComponent implements OnInit {
+    constructor(private _cardService: CardService) { }
+
     pageTitle: string = 'Card List';
     cards: Card[];
     errorMessage: string;
-    
+
     idNumberValues: string = '';
     stateValues: string = '';
     locationValues: string = '';
 
-    constructor(private _cardService: CardService) { }
 
     ngOnInit(): void {
-        this.getCards();   
+        this.getCards();
     }
-    
+
 
     getCards() {
         this._cardService.getCards()

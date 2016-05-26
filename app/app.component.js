@@ -52,9 +52,27 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router',
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent() {
+                function AppComponent(_cardService) {
+                    this._cardService = _cardService;
                     this.pageTitle = 'My App';
+                    this.userStatus = 'userStatus';
                 }
+                AppComponent.prototype.ngOnInit = function () {
+                    this.userIsAdmin();
+                };
+                AppComponent.prototype.userIsAdmin = function () {
+                    var _this = this;
+                    this._cardService.userIsAdmin()
+                        .subscribe(function (result) { return _this.admin = result; }, function (error) { return _this.errorMessage = error; }, function () { return _this.getUserStatus(); });
+                };
+                AppComponent.prototype.getUserStatus = function () {
+                    if (this.admin == true) {
+                        this.userStatus = "admin";
+                    }
+                    else {
+                        this.userStatus = "user";
+                    }
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
@@ -71,7 +89,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router',
                         //log
                         { path: '/log/list', name: 'LogList', component: log_list_component_1.LogListComponent }
                     ]), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [card_service_1.CardService])
                 ], AppComponent);
                 return AppComponent;
             }());
