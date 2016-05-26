@@ -18,10 +18,10 @@ import {LogListComponent} from './log/log-list.component'
 //Location
 import { LocationService } from './location/location.service';
 
-//xhr
-import {BrowserXhr} from "angular2/http";
-import {Injectable, provide} from "angular2/core";
-import { CORSBrowserXHR } from './xhr'
+//xhr withCredentials
+import { BrowserXhr } from "angular2/http";
+import { Injectable, provide } from "angular2/core";
+import { CORSBrowserXHR } from './extensions/xhr'
 
 @Component({
     selector: 'my-app',
