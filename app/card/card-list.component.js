@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './card.service', './idNumber.pipe', './state.pipe', './location.pipe'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/router-deprecated', './card.service', './idNumber.pipe', './state.pipe', './location.pipe'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,15 +10,15 @@ System.register(['angular2/core', 'angular2/router', './card.service', './idNumb
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, card_service_1, idNumber_pipe_1, state_pipe_1, location_pipe_1;
+    var core_1, router_deprecated_1, card_service_1, idNumber_pipe_1, state_pipe_1, location_pipe_1;
     var CardListComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (router_1_1) {
-                router_1 = router_1_1;
+            function (router_deprecated_1_1) {
+                router_deprecated_1 = router_deprecated_1_1;
             },
             function (card_service_1_1) {
                 card_service_1 = card_service_1_1;
@@ -52,7 +52,7 @@ System.register(['angular2/core', 'angular2/router', './card.service', './idNumb
                 CardListComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/card/card-list.component.html',
-                        directives: [router_1.ROUTER_DIRECTIVES],
+                        directives: [router_deprecated_1.ROUTER_DIRECTIVES],
                         pipes: [idNumber_pipe_1.IdNumberPipe, state_pipe_1.StatePipe, location_pipe_1.LocationPipe]
                     }), 
                     __metadata('design:paramtypes', [card_service_1.CardService])

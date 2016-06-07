@@ -1,7 +1,7 @@
-import {Component} from 'angular2/core';
-import { HTTP_PROVIDERS } from 'angular2/http'
+import {Component} from '@angular/core';
+import { HTTP_PROVIDERS } from '@angular/http'
 import 'rxjs/Rx';   // Load all features
-import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router'
+import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated'
 
 //Card
 import {CardService} from './card/card.service'
@@ -19,8 +19,8 @@ import {LogListComponent} from './log/log-list.component'
 import { LocationService } from './location/location.service';
 
 //xhr withCredentials
-import { BrowserXhr } from "angular2/http";
-import { Injectable, provide } from "angular2/core";
+import { BrowserXhr } from "@angular/http";
+import { Injectable, provide } from "@angular/core";
 import { CORSBrowserXHR } from './extensions/xhr'
 
 @Component({

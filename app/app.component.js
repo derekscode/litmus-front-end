@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router', './card/card.service', './card/card-list.component', './card/card-edit.component', './card/card-create.component', './log/log.service', './log/log-list.component', './location/location.service', './extensions/xhr'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/http', 'rxjs/Rx', '@angular/router-deprecated', './card/card.service', './card/card-list.component', './card/card-edit.component', './card/card-create.component', './log/log.service', './log/log-list.component', './location/location.service', './extensions/xhr'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, router_1, card_service_1, card_list_component_1, card_edit_component_1, card_create_component_1, log_service_1, log_list_component_1, location_service_1, http_2, core_2, xhr_1;
+    var core_1, http_1, router_deprecated_1, card_service_1, card_list_component_1, card_edit_component_1, card_create_component_1, log_service_1, log_list_component_1, location_service_1, http_2, core_2, xhr_1;
     var AppComponent;
     return {
         setters:[
@@ -23,8 +23,8 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router',
                 http_2 = http_1_1;
             },
             function (_1) {},
-            function (router_1_1) {
-                router_1 = router_1_1;
+            function (router_deprecated_1_1) {
+                router_deprecated_1 = router_deprecated_1_1;
             },
             function (card_service_1_1) {
                 card_service_1 = card_service_1_1;
@@ -77,11 +77,11 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router',
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: 'app/app.component.html',
-                        directives: [router_1.ROUTER_DIRECTIVES],
+                        directives: [router_deprecated_1.ROUTER_DIRECTIVES],
                         providers: [card_service_1.CardService, log_service_1.LogService, location_service_1.LocationService,
-                            router_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS, core_2.provide(http_2.BrowserXhr, { useClass: xhr_1.CORSBrowserXHR })]
+                            router_deprecated_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS, core_2.provide(http_2.BrowserXhr, { useClass: xhr_1.CORSBrowserXHR })]
                     }),
-                    router_1.RouteConfig([
+                    router_deprecated_1.RouteConfig([
                         //card 
                         { path: '/card/list', name: 'CardList', component: card_list_component_1.CardListComponent, useAsDefault: true },
                         { path: '/card/edit/:id', name: 'CardEdit', component: card_edit_component_1.CardEditComponent },
