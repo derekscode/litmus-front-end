@@ -39,7 +39,7 @@
             </thead>
             <tbody>
 
-                <tr *ngFor="#card of cards |
+                <tr *ngFor="let card of cards |
                 idNumberPipe: idNumberValues |
                  statePipe: stateValues |
                  locationPipe: locationValues">
