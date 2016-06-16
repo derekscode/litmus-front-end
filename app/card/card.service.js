@@ -35,9 +35,9 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Observable'], function(
                     // LitmusWithAuthentication - breaks
                     // private _cardUrl = 'http://localhost:25466/api/card';
                     // Litmus
-                    this._cardUrl = 'http://localhost:8462/api/card';
+                    this._cardUrl = 'http://localhost:58080/api/card';
                 }
-                // http://localhost:8462/api/card/UserIsAdmin
+                // http://localhost:58080/api/card/UserIsAdmin
                 CardService.prototype.userIsAdmin = function () {
                     return this._http.get(this._cardUrl + "/UserIsAdmin")
                         .map(function (response) { return response.json(); })

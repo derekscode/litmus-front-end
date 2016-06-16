@@ -27,7 +27,7 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Observable'], function(
             LogService = (function () {
                 function LogService(_http) {
                     this._http = _http;
-                    this._logUrl = 'http://localhost:8462/api/log';
+                    this._logUrl = 'http://localhost:58080/api/log';
                 }
                 LogService.prototype.getLogs = function () {
                     return this._http.get(this._logUrl)

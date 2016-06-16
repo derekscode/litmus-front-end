@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Observable';
 export class LocationService {
     constructor(private _http: Http) { }
 
-    private _locationUrl = 'http://localhost:8462/api/location';
+    private _locationUrl = 'http://localhost:58080/api/location';
 
     getLocations(): Observable<any[]> {
         return this._http.get(this._locationUrl)
