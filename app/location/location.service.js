@@ -27,7 +27,7 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Observable'], function(
             LocationService = (function () {
                 function LocationService(_http) {
                     this._http = _http;
-                    this._locationUrl = 'http://localhost:58080/api/location';
+                    this._locationUrl = 'http://localhost:30408/api/location';
                 }
                 LocationService.prototype.getLocations = function () {
                     return this._http.get(this._locationUrl)

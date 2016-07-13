@@ -9,7 +9,7 @@ import { Log } from './log';
 export class LogService {
     constructor(private _http: Http) { }
     
-    private _logUrl = 'http://localhost:58080/api/log';
+    private _logUrl = 'http://localhost:30408/api/log';
     
     
     getLogs(): Observable<Log[]> {

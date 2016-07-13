@@ -33,11 +33,12 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Observable'], function(
                     // LitmusWithoutAuthentication - works
                     // private _cardUrl = 'http://localhost:25137/api/card';
                     // LitmusWithAuthentication - breaks
-                    // private _cardUrl = 'http://localhost:25466/api/card';
-                    // Litmus
-                    this._cardUrl = 'http://localhost:58080/api/card';
+                    // private _cardUrl = 'http://:25466/api/card';
+                    // ASP.NET Core 1.0
+                    this._cardUrl = 'http://localhost:30408/api/card';
                 }
-                // http://localhost:58080/api/card/UserIsAdmin
+                // ASP.NET Core RC1
+                // private _cardUrl = 'http://localhost:8462/api/card';
                 CardService.prototype.userIsAdmin = function () {
                     return this._http.get(this._cardUrl + "/UserIsAdmin")
                         .map(function (response) { return response.json(); })

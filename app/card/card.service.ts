@@ -8,7 +8,6 @@ import { Card } from './card';
 @Injectable()
 export class CardService {
     constructor(private _http: Http) { }
-
     // cards.json
     // private _cardUrl = 'api/cards/cards.json';
 
@@ -16,12 +15,14 @@ export class CardService {
     // private _cardUrl = 'http://localhost:25137/api/card';
 
     // LitmusWithAuthentication - breaks
-    // private _cardUrl = 'http://localhost:25466/api/card';
+    // private _cardUrl = 'http://:25466/api/card';
 
-    // Litmus
-    private _cardUrl = 'http://localhost:58080/api/card';
+    // ASP.NET Core 1.0
+    private _cardUrl = 'http://localhost:30408/api/card';
 
-    // http://localhost:58080/api/card/UserIsAdmin
+    // ASP.NET Core RC1
+    // private _cardUrl = 'http://localhost:8462/api/card';
+
     userIsAdmin(): Observable<boolean> {
         return this._http.get(this._cardUrl + "/UserIsAdmin")
             .map((response: Response) => <boolean>response.json())
