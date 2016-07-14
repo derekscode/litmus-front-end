@@ -53,7 +53,7 @@ export class AppComponent {
 
 
     ngOnInit(): void {
-        // this.userIsAdmin();
+        this.userIsAdmin();
     }
 
     userIsAdmin() {

@@ -58,7 +58,7 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Rx', '@angular/router-d
                     this.userStatus = 'userStatus';
                 }
                 AppComponent.prototype.ngOnInit = function () {
-                    // this.userIsAdmin();
+                    this.userIsAdmin();
                 };
                 AppComponent.prototype.userIsAdmin = function () {
                     var _this = this;
